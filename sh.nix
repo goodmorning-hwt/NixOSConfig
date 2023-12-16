@@ -3,6 +3,8 @@ let
   myAliases = {
     ll = "ls -l";
     ".." = "cd ..";
+		ra = "joshuto";
+
   };
 in
 {

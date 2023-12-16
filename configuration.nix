@@ -34,9 +34,9 @@ in
   boot.loader.grub.useOSProber = true;
 
   # Enable ZSH
-  environment.shells = with pkgs; [bash zsh ];
-  users.defaultUserShell = pkg.zsh;
-  programs.zsh.enable = true;
+ # environment.shells = with pkgs; [bash zsh ];
+  #users.defaultUserShell = pkgs.bash;
+  #programs.zsh.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -155,6 +155,9 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+
+  # VMWare
+	virtualisation.vmware.guest.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

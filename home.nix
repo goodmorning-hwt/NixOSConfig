@@ -4,7 +4,8 @@
   imports = [
 	# Each time before you import, you should stage your file.
 	  ./sh.nix
-	  ./lazygit.nix
+    ./system/app/geek/lazygit.nix
+    ./system/app/geek/joshuto.nix
   # Priority
 	/*
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
@@ -38,7 +39,8 @@
 		wget
 		curl
 		vim
-		brave
+		unzip
+		zip
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -82,6 +84,7 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+    EDITOR = "vim";
   };
   
 
