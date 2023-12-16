@@ -3,9 +3,10 @@
 {
   imports = [
 	# Each time before you import, you should stage your file.
-	  ./sh.nix
     ./system/app/geek/lazygit.nix
     ./system/app/geek/joshuto.nix
+    ./system/app/shell/zsh/zsh.nix
+    ./system/app/shell/sh.nix
   # Priority
 	/*
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
