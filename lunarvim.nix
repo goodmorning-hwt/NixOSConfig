@@ -4,7 +4,6 @@
 	home.packages = with pkgs; [
 	# My Hyperland Packages
 	  lazygit
-		joshuto
 	];
 
 	programs.lazygit = {
@@ -12,11 +11,6 @@
 	};
 
 
-	programs.joshuto = {
-		enable = true;
-		theme = {
-		};
-	};
 
 	
 
