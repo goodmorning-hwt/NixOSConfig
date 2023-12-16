@@ -2,17 +2,17 @@
 
 {
 	home.packages = with pkgs; [
-	# My Hyperland Packages
-	  lazygit
+#		lunarvim
+		git
+		gnumake
+		gcc
+#		python311Full
+#		python311Packages.pip
+		nodejs
+		neovim
+		cargo
 	];
 
-	programs.lazygit = {
-		enable = true;
-	};
-
-
-
-	
-
-  
 }
+
+
