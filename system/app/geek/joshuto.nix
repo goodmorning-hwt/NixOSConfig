@@ -8,6 +8,7 @@
 		rustc
 		xclip
 		fzf
+		bat
 		zoxide
 	];
 
@@ -15,11 +16,18 @@
 
 	programs.joshuto = {
 		enable = true;
-		theme = {
+		keymap = {
+
 		};
 	};
 
 	
+	
+	/*
+	Cheat Sheet:
+	rename: cw
+	new shell:   :shell zsh
+	*/
 
   
 }
