@@ -159,6 +159,24 @@ in
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
 
+  # font
+	fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    source-han-sans
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+
+  ];	
+
+
   # VMWare
 	virtualisation.vmware.guest.enable = true;
 
