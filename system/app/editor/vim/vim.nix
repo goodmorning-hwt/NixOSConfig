@@ -6,7 +6,7 @@
 		vim
 	];
 
-  home.file."~/.vimrc".source = ./basic.vim; 
+  home.file.".vimrc".source = ./basic.vim; 
 }
 
 

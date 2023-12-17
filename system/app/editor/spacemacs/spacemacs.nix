@@ -8,7 +8,7 @@
     # optional dependencies
     coreutils # basic GNU utilities
     fd
-#    clang
+#    clana
 		pandoc
 		emacs-all-the-icons-fonts
 		aspell
@@ -21,6 +21,6 @@
     package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
   };
 	
-  home.file."~/.spacemacs".source = ./spacemacs.el; 
+  home.file.".spacemacs".source = ./spacemacs.el; 
   
 }	

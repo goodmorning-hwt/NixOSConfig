@@ -134,7 +134,6 @@ in
 		neovim
 		trashy
 
-
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -225,7 +224,6 @@ in
 
 # Flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
 
 
 }
