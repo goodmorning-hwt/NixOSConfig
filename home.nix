@@ -5,11 +5,13 @@
 	# Each time before you import, you should stage your file.
     ./system/app/geek/lazygit.nix
     ./system/app/geek/joshuto/joshuto.nix
+    ./system/app/editor/spacemacs/spacemacs.nix
+    ./system/app/editor/lunarvim/lunarvim.nix
     ./system/app/VPN/clash.nix
     ./system/app/shell/zsh/zsh.nix
     ./system/app/shell/sh.nix
-    ./lunarvim.nix
-    ./doomemacs.nix
+    ./system/app/lang/python.nix
+    ./system/app/lang/go.nix
   # Priority
 	/*
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
