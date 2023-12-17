@@ -9,6 +9,7 @@
     coreutils # basic GNU utilities
     fd
 #    clang
+		pandoc
 	];
 
   programs.emacs = {
