@@ -5,6 +5,7 @@
 	# Each time before you import, you should stage your file.
     ./system/app/geek/lazygit.nix
     ./system/app/geek/joshuto/joshuto.nix
+    ./system/app/VPN/clash.nix
     ./system/app/shell/zsh/zsh.nix
     ./system/app/shell/sh.nix
     ./lunarvim.nix

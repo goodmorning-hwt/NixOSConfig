@@ -170,3 +170,13 @@ keymap = [
   { keys = ["w"], commands = ["show_tasks"] },
   { keys = ["escape"], commands = ["show_tasks"] },
 ]
+
+
+[hwt]
+
+keymap = [
+  { keys = ["ctrl+g"], commands = [":lazygit"] },
+  { keys = ["N"], commands = [":touch"] },
+  { keys = ["S"], commands = [":shell"] },
+  { keys = ["M"], commands = [":mkdir"] },
+]
