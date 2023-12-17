@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, callPackage ,... }:
 
 {
   imports = [
@@ -7,7 +7,8 @@
     ./system/app/geek/joshuto.nix
     ./system/app/shell/zsh/zsh.nix
     ./system/app/shell/sh.nix
-  # ./lunarvim.nix
+    ./lunarvim.nix
+    ./doomemacs.nix
   # Priority
 	/*
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that

@@ -7,6 +7,7 @@ let
 		lg = "lazygit";
 		nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt";
 		hms = "home-manager switch --flake ~/.dotfiles";
+		switch = "git add . && nrs && hms";
 
   };
 in
