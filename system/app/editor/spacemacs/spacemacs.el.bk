@@ -54,7 +54,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     nix
+     nixos
      ;; spell-checking
      syntax-checking
      version-control
@@ -82,7 +82,12 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      ;; (copilot :location (recipe
+                                      ;;                     :fetcher github
+                                      ;;                     :repo "zerolfx/copilot.el"
+                                      ;;                     :files ("*.el" "dist")))
+                                      )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -277,7 +282,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("Fira Code Nerd Font"
                                :size 14.0
                                :weight normal
                                :width normal)
@@ -597,9 +602,21 @@ before packages are loaded."
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family "Source Han Sans"
-                                 :size 14))
+                                 :size 28))
     (set-fontset-font t 'unicode (font-spec :family "Noto Color Emoji" :size 14))
     )
+
+  (with-eval-after-load 'company
+    ;; disable inline previews
+    (delq 'company-preview-if-just-one-frontend company-frontends))
+
+  ;; (with-eval-after-load 'copilot
+  ;;   (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+  ;;   (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+  ;;   (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+  ;;   (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+
+  ;; (add-hook 'prog-mode-hook 'copilot-mode)
 
 )
 
