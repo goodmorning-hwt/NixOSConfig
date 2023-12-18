@@ -1,11 +1,10 @@
-{config, pkgs, ...}:
+{confi, pkgs, ...}:
 
 {
 
 	home.packages = with pkgs; [
 	# emacs
     ripgrep
-		exa
     # optional dependencies
     coreutils # basic GNU utilities
     fd
