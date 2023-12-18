@@ -1,7 +1,6 @@
-{config, pkgs, ...}:
+{config, pkgs, lib, ...}:
 let
   myAliases = {
-    ll = "ls -l";
     ".." = "cd ..";
     s = "neofetch";
     wttr="curl wttr.in";
@@ -15,10 +14,14 @@ let
     lg="lazygit";
     ra="joshuto";
     cat="bat";
+    ll = "ls -l";
     lv="lvim";
     o="open";
     "o."="open .";
     gcc151="gcc -O2 -Werror -Wall -Wextra -Wconversion -Wno-unused-result -Wvla -pedantic -std=c11";
+    cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
+    bloat = "nix path-info -Sh /run/current-system";
+
   };
 in
 {
@@ -33,19 +36,27 @@ in
     joshuto
     fzf
     tree
+		trashy
 	];
 
   programs.zsh = {
     enable = true;
     shellAliases = myAliases;
+		initExtra = ''
+		neofetch
+		'';
     zplug = {
       enable = true;
       plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; } # Simple plugin installation
-        { name = "sindresorhus/pure"; tags = [ as:theme depth:1 ]; } # Installations with additional options. For the list of options, please refer to Zplug README.
+        { name = "Aloxaf/fzf-tab"; }
+        { name = "mafredri/zsh-async"; tags = [ from:github ]; }
+        { name = "sindresorhus/pure"; tags = [ use:pure.zsh from:github as:theme ]; }
+        { name = "zsh-users/zsh-autosuggestions"; }
         { name = "plugins/sudo"; tags = [ from:oh-my-zsh ]; }
         { name = "zsh-users/zsh-syntax-highlighting";}
-        { name = "history-substring-search";}
+        { name = "zsh-users/zsh-history-substring-search";}
+        { name = "hlissner/zsh-autopair";}
+        { name = "chisui/zsh-nix-shell";}
       ];
     };
   };

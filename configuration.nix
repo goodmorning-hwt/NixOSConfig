@@ -101,6 +101,7 @@ in
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.goodmorninghwt = {
+		shell = pkgs.zsh;
     isNormalUser = true;
     description = "goodmorninghwt";
     extraGroups = [ "networkmanager" "wheel" ];
@@ -224,5 +225,4 @@ in
   # Enable ZSH
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-
 }

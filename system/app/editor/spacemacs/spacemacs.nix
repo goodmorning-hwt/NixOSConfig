@@ -23,6 +23,6 @@
     package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
   };
 
-  home.file.".spacemacs".source = ./spacemacs.el;
+  # home.file.".spacemacs".source = ./spacemacs.el;
 
 }
