@@ -61,7 +61,10 @@ This function should only modify configuration layer settings."
      (treemacs :variables treemacs-use-filewatch-mode t
                :variables treemacs-use-all-the-icons-theme t
                )
-     chinese
+     (chinese :variables
+              chinese-default-input-method 'rime
+              )
+
      japanese
      ;; eaf
      unicode-fonts
@@ -602,8 +605,8 @@ before packages are loaded."
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family "Source Han Sans"
-                                 :size 28))
-    (set-fontset-font t 'unicode (font-spec :family "Noto Color Emoji" :size 14))
+                                 :size 35))
+    (set-fontset-font t 'unicode (font-spec :family "Noto Color Emoji" :size 35))
     )
 
   (with-eval-after-load 'company

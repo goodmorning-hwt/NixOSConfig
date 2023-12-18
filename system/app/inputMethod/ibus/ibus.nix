@@ -7,7 +7,7 @@
 
 	
 	home.file.".config/ibus/rime" = {
-		source = ../rime; 
+		source = ../rime/rime; 
 		recursive = true; 
 	};
   

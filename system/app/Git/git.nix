@@ -6,7 +6,7 @@
 
 
 	
-  home.file."~/.gitconfig".source = ./.gitconfig; 
+  home.file.".gitconfig".source = ./.gitconfig; 
 
   
 }

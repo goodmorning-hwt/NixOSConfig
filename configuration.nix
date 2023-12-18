@@ -130,6 +130,8 @@ in
     git
 		neovim
 		trashy
+    v2ray
+    v2raya
 
   ];
 
@@ -204,18 +206,19 @@ in
     };
 
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-rime
-      fcitx5-chinese-addons
-    ];
+    # enabled = "fcitx5";
+    # fcitx5.addons = with pkgs; [
+    #  fcitx5-rime
+    #  fcitx5-chinese-addons
+    # ];
 
     # 我现在用 ibus
-    # enabled = "ibus";
-    # ibus.engines = with pkgs.ibus-engines; [
-    #   libpinyin
-    #   rime
-    # ];
+    enabled = "ibus";
+    ibus.engines = with pkgs.ibus-engines; [
+      libpinyin
+      rime
+    ];
+
   };
 
 
@@ -225,4 +228,12 @@ in
   # Enable ZSH
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+
+  #enable v2raya
+  # sudo tail -f /var/log/v2raya/v2raya.log
+  # sudo nixos-rebuild switch --rollback
+  # services.v2ray.enable = true;
+  services.v2raya.enable = true;
+
+
 }
