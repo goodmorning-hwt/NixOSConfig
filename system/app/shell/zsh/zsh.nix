@@ -8,13 +8,14 @@ let
     vc="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"; # 终端设置翻墙(走ClashX);
     nv="unset http_proxy; unset https_proxy;"; # 终端设置不翻墙;
     ip="curl cip.cc"; # 查看ip和是否翻墙;
-    la="ls -a";
+    # la="ls -a";
     x="unar";
     ytd="youtube-dl";
     lg="lazygit";
     ra="joshuto";
-    cat="bat";
-    ll = "ls -l";
+    jo="joshuto";
+    # cat="bat";
+    # ll = "ls -l";
     lv="lvim";
     o="open";
     "o."="open .";
@@ -22,6 +23,16 @@ let
     cleanup = "sudo nix-collect-garbage --delete-older-than 7d";
     bloat = "nix path-info -Sh /run/current-system";
 
+    l = "eza -lF --time-style=long-iso --icons";
+    la = "eza -lah --tree";
+    ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
+    tree = "eza --tree --icons --tree";
+
+    # cat = "${lib.getExe bat} --style=plain";
+    # l = "${lib.getExe exa} -lF --time-style=long-iso --icons";
+    # la = "${lib.getExe exa} -lah --tree";
+    # ls = "${lib.getExe exa} -h --git --icons --color=auto --group-directories-first -s extension";
+    # tree = "${lib.getExe exa} --tree --icons --tree";
   };
 in
 {
@@ -35,8 +46,10 @@ in
     lazygit
     joshuto
     fzf
+    eza
     tree
 		trashy
+    unar
 	];
 
   programs.zsh = {

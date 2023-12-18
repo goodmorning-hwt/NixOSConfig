@@ -5,6 +5,7 @@
 	home.packages = with pkgs; [
 	# emacs
     ripgrep
+		exa
     # optional dependencies
     coreutils # basic GNU utilities
     fd
@@ -14,6 +15,7 @@
 		aspell
 		cmigemo
 		ispell
+    cmake
     libtool
     libvterm
 	];
@@ -24,5 +26,11 @@
   };
 
   # home.file.".spacemacs".source = ./spacemacs.el;
+
+  /*
+  The reason why I finally commentized this line and decided not to use nix to manage my .spacemacs
+  but backing up the .spacemacs in nix is that
+  I change my .spacemacs too often and using nix makes the procedure a little bit more tedious.
+  */ 
 
 }
