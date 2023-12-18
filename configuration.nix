@@ -33,10 +33,6 @@ in
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  # Enable ZSH
- # environment.shells = with pkgs; [bash zsh ];
-  #users.defaultUserShell = pkgs.bash;
-  #programs.zsh.enable = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -225,5 +221,8 @@ in
 # Flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable ZSH
+  users.defaultUserShell = pkgs.zsh;
+  programs.zsh.enable = true;
 
 }

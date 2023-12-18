@@ -5,9 +5,9 @@ let
     ".." = "cd ..";
 		ra = "joshuto";
 		lg = "lazygit";
-		nrs = "sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt";
-		hms = "home-manager switch --flake ~/.dotfiles";
-		switch = "git add ~/.dotfiles && nrs && hms";
+		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt";
+		hms = "cd ~/.dotfiles && git add -A && home-manager switch --flake ~/.dotfiles";
+		switch = "nrs && hms";
 		doom = "~/.emacs.d/bin/doom";
 
   };
