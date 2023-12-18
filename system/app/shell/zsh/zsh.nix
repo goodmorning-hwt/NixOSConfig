@@ -34,6 +34,7 @@ in
     lazygit
     joshuto
     fzf
+    tree
 	];
 
   programs.zsh = {
