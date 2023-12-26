@@ -1,11 +1,12 @@
 {config, pkgs, lib, ...}:
 let
   myAliases = {
+    "q" = "exit";
     ".." = "cd ..";
     s = "neofetch";
     wttr="curl wttr.in";
-    v="export http_proxy=socks5://127.0.0.1:1086;export https_proxy=socks5://127.0.0.1:1086"; # 终端设置翻墙（走shadowsocks);
-    vc="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890"; # 终端设置翻墙(走ClashX);
+    v="export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙（走shadowsocks);
+    vc="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:20171 all_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙(走ClashX);
     nv="unset http_proxy; unset https_proxy;"; # 终端设置不翻墙;
     ip="curl cip.cc"; # 查看ip和是否翻墙;
     # la="ls -a";
