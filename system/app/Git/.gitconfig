@@ -2,5 +2,5 @@
 	email = goodmorning_hwt@sjtu.edu.cn
 	name = He Wentao
 
-[url "https://kkgithub.com/"]
-	insteadOf = https://github.com/
+# [url "https://kkgithub.com/"]
+# 	insteadOf = https://github.com/
