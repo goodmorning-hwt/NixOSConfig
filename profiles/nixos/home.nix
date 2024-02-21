@@ -4,28 +4,28 @@
   imports = [
 	# Each time before you import, you should stage your file.
 
-    ./system/app/editor/spacemacs/spacemacs.nix
-    ./system/app/editor/lunarvim/lunarvim.nix
-    ./system/app/editor/vim/vim.nix
+    ../../system/app/editor/spacemacs/spacemacs.nix
+    ../../system/app/editor/lunarvim/lunarvim.nix
+    ../../system/app/editor/vim/vim.nix
 
-    ./system/app/geek/lazygit.nix
-    ./system/app/geek/toys.nix
-    ./system/app/geek/joshuto/joshuto.nix
+    ../../system/app/geek/lazygit.nix
+    ../../system/app/geek/toys.nix
+    ../../system/app/geek/joshuto/joshuto.nix
 
-    ./system/app/Git/git.nix
+    ../../system/app/Git/git.nix
 
-    ./system/app/inputMethod/ibus/ibus.nix
-    ./system/app/inputMethod/fcitx5/fcitx5.nix
-    ./system/app/inputMethod/rime/rime.nix
+    ../../system/app/inputMethod/ibus/ibus.nix
+    ../../system/app/inputMethod/fcitx5/fcitx5.nix
+    ../../system/app/inputMethod/rime/rime.nix
 
-    ./system/app/lang/python.nix
-    ./system/app/lang/go.nix
+    ../../system/app/lang/python.nix
+    ../../system/app/lang/go.nix
 
-    ./system/app/shell/zsh/zsh.nix
-    ./system/app/shell/sh.nix
+    ../../system/app/shell/zsh/zsh.nix
+    ../../system/app/shell/sh.nix
 
-#    ./system/app/VPN/clash.nix
-    ./system/app/VPN/v2ray.nix
+#    ../../system/app/VPN/clash.nix
+    ../../system/app/VPN/v2ray.nix
 
   # Priority
 	/*
@@ -107,7 +107,7 @@
     # EDITOR = "emacs";
     EDITOR = "vim";
   };
-  
+
 
   # home.file.".config/hypr/hyprland.conf".text = ''
   #   something nice;
@@ -127,7 +127,7 @@
     How To Rollback:
     home-manager generations
     copy-the-listed-path/activate
-  */ 
+  */
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

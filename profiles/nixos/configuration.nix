@@ -17,7 +17,7 @@ define function as a variable:
 let
   addNumbers = {x, y}: x + y;
 in
-  addNumbers {x = 2; y = 2;} 
+  addNumbers {x = 2; y = 2;}
 
 */
 
@@ -25,7 +25,7 @@ in
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       # Modulization
-      
+
     ];
 
   # Bootloader.
@@ -132,8 +132,9 @@ in
 		trashy
     v2ray
     v2raya
-
-  ];
+  ] ++ (if (config.services.xserver.windowManager.xmonad.enable == true) then [pkgs.rofi]
+        else (if config.programs.hyprland.enable == true then [pkgs.fuzzel] else [])
+  );
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -233,6 +234,7 @@ in
   # sudo tail -f /var/log/v2raya/v2raya.log
   # sudo nixos-rebuild switch --rollback
   # services.v2ray.enable = true;
+
   services.v2raya.enable = true;
 
 
