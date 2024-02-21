@@ -12,6 +12,7 @@
 		pandoc
 		emacs-all-the-icons-fonts
 		aspell
+    aspellDicts.en
 		cmigemo
 		ispell
     cmake
