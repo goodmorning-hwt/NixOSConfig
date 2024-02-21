@@ -17,7 +17,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-    nixosConfigurations = {
+    nixosConfigurations.nixos = {
       "goodmorninghwt" = lib.nixosSystem {
         # system = "x86_64-linux";
         inherit system;
@@ -25,12 +25,32 @@
       };
     };
 
+    # homeConfigurations.nixos = {
+    #   "goodmorninghwt" = home-manager.lib.homeManagerConfiguration {
+    #     inherit pkgs;
+    #     modules = [ ./profiles/nixos/home.nix];
+    #   };
+    # };
+
+    # homeConfigurations.rmbp2018EndeavourOS = {
+    #   "hwt" = home-manager.lib.homeManagerConfiguration {
+    #     inherit pkgs;
+    #     modules = [ ./profiles/rmbp2018EndeavourOS/home.nix];
+    #   };
+    # };
+
     homeConfigurations = {
       "goodmorninghwt" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./profiles/nixos/home.nix];
       };
+
+      "hwt" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./profiles/rmbp2018EndeavourOS/home.nix];
+      };
     };
+
   };
 
 }
