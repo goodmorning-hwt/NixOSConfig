@@ -17,15 +17,15 @@ VPN Client: clash
 
 ## Get Started
 1. Install nixOS
-2. Install home manager (Please refer to the Home Manager Manual. I prefer the Standalone installation way).
+2. Install home manager (Please refer to the Home Manager Manual. I prefer the Standalone installation way). Attention: if `nix-shell '<home-manager>' -A install` echos a `not found` error, you may reboot the system and reexecute the command.
 3. clone the repository to `~/.dotfiles`
-3. run these shell command
+4. run these shell command
 ```shell
 cd ~/.dotfiles
 git add .
 sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt"
 home-manager switch --flake ~/.dotfiles"
 ```
-4. install [Spacemacs](https://www.spacemacs.org)
+5. install [Spacemacs](https://www.spacemacs.org)
 <!-- 5. install [lunarvim](https://www.lunarvim.org) -->
-5. Have fun!
+6. Have fun!
