@@ -17,7 +17,8 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-    nixosConfigurations.nixos = {
+
+    nixosConfigurations = {
       "goodmorninghwt" = lib.nixosSystem {
         # system = "x86_64-linux";
         inherit system;
