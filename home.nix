@@ -32,8 +32,8 @@
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
 	value : 100 priority
 	lib.mkOverride somevalue  specific priority
-  lib.mkForce 
-	
+  lib.mkForce
+
 	same attribute set automatically merge
 	*/
 	];
