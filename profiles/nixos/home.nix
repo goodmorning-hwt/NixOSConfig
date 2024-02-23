@@ -7,6 +7,7 @@
     ../../system/app/editor/spacemacs/spacemacs.nix
     ../../system/app/editor/lunarvim/lunarvim.nix
     ../../system/app/editor/vim/vim.nix
+    ../../system/app/editor/vscode/vscode.nix
 
     ../../system/app/geek/lazygit.nix
     ../../system/app/geek/toys.nix
@@ -41,6 +42,7 @@
   # manage.
   home.username = "goodmorninghwt";
   home.homeDirectory = "/home/goodmorninghwt";
+  nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
