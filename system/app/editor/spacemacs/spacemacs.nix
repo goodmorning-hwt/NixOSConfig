@@ -22,7 +22,8 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
+    # package = pkgs.emacs;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
+    package = pkgs.emacs29-gtk3;  # replace with pkgs.emacs-gtk, or a version provided by the community overlay if desired.
   };
 
   # home.file.".spacemacs".source = ./spacemacs.el;
