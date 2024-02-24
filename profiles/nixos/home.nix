@@ -25,6 +25,8 @@
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
 
+    ../../system/app/terminal/kitty/kitty.nix
+
 #    ../../system/app/VPN/clash.nix
     ../../system/app/VPN/v2ray.nix
 
