@@ -29,3 +29,4 @@ home-manager switch --flake ~/.dotfiles"
 5. install [Spacemacs](https://www.spacemacs.org)
 <!-- 5. install [lunarvim](https://www.lunarvim.org) -->
 6. Have fun!
+

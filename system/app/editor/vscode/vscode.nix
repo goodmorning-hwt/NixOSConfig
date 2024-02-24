@@ -12,5 +12,6 @@
     package = pkgs.vscode;
   };
 
+  home.file.".vscode/vimrc".source = ./vscode.vim;
 
 }
