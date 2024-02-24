@@ -53,7 +53,13 @@ in
 		trashy
     unar
     fira-code-nerdfont
+
+		starship
 	];
+
+  programs.starship = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -75,7 +81,7 @@ fi
       plugins = [
         { name = "Aloxaf/fzf-tab"; }
         { name = "mafredri/zsh-async"; tags = [ from:github ]; }
-        { name = "sindresorhus/pure"; tags = [ use:pure.zsh from:github as:theme ]; }
+        # { name = "sindresorhus/pure"; tags = [ use:pure.zsh from:github as:theme ]; }
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "plugins/sudo"; tags = [ from:oh-my-zsh ]; }
         { name = "zsh-users/zsh-syntax-highlighting";}
