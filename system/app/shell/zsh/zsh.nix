@@ -42,6 +42,7 @@ in
 		neofetch
 		neo-cowsay
     youtube-dl
+    autojump
     bat
     curl
     lazygit
@@ -51,6 +52,7 @@ in
     tree
 		trashy
     unar
+    fira-code-nerdfont
 	];
 
   programs.zsh = {
