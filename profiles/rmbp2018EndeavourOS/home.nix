@@ -27,6 +27,9 @@
 #    ../../system/app/VPN/clash.nix
     ../../system/app/VPN/v2ray.nix
 
+
+    ../../system/wm/hyprland/hyprland.nix
+
   # Priority
 	/*
 	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
