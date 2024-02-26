@@ -34,6 +34,7 @@ in
   boot.loader.grub.useOSProber = true;
 
 
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -67,8 +68,19 @@ in
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
+
   services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm.enableHidpi = true;
+
   services.xserver.desktopManager.plasma5.enable = true;
+
+
+  # programs.hyprland.enable = true;
+
+  # programs.hyprland.xwayland = {
+  #   enable = true;
+  #   hidpi = true;
+  # };
 
   # Configure keymap in X11
   services.xserver = {
@@ -114,7 +126,7 @@ in
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.enable = false;
   services.xserver.displayManager.autoLogin.user = "goodmorninghwt";
 
   # Allow unfree packages
@@ -222,6 +234,11 @@ in
 
   };
 
+  # environment.sessionVariables = rec {
+  #   WLR_RENDERER_ALLOW_SOFTWARE = "1";
+  # };
+
+
 
 # Flake
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -236,6 +253,7 @@ in
   # services.v2ray.enable = true;
 
   services.v2raya.enable = true;
+
 
 
 }

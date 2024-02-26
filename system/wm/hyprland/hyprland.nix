@@ -82,9 +82,9 @@
   };
 
 
-#  programs.hyprland = {
-#    enable = true;
-#  };
+ #programs.hyprland = {
+ #   enable = true;
+ # };
 
   programs.wlogout = {
     enable = true;
@@ -97,16 +97,16 @@
 
   programs.waybar = {
     enable = true;
-     
+
   };
 
   programs.swaylock = {
     enable = true;
-     
+
   };
   programs.wofi = {
     enable = true;
-     
+
   };
 
 
