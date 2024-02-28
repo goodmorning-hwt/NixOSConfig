@@ -29,7 +29,7 @@ let
     ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
     tree = "eza --tree --icons --tree";
 
-    mkcd = "function _mkcd() { mkdir \"$1\" && cd \"$1\" && pwd; }; _mkcd";
+    mkcd = "function _mkcd() { mkdir \"$1\" && cd \"$1\" && echo -e \"\\033[1;32m$(pwd)\\033[0m\"; }; _mkcd";
 
     # cat = "${lib.getExe bat} --style=plain";
     # l = "${lib.getExe exa} -lF --time-style=long-iso --icons";
