@@ -25,20 +25,24 @@ let
     bloat = "nix path-info -Sh /run/current-system";
 
     l = "eza -lF --time-style=long-iso --icons";
-    la = "eza -lah --tree";
+    la = "eza -lah ";
     ls = "eza -h --git --icons --color=auto --group-directories-first -s extension";
     tree = "eza --tree --icons --tree";
+
+    mkcd = "function _mkcd() { mkdir \"$1\" && cd \"$1\"; }; _mkcd";
 
     # cat = "${lib.getExe bat} --style=plain";
     # l = "${lib.getExe exa} -lF --time-style=long-iso --icons";
     # la = "${lib.getExe exa} -lah --tree";
     # ls = "${lib.getExe exa} -h --git --icons --color=auto --group-directories-first -s extension";
     # tree = "${lib.getExe exa} --tree --icons --tree";
+
   };
 in
 {
 
 	home.packages = with pkgs; [
+    # toys
 		neofetch
 		neo-cowsay
     youtube-dl
@@ -52,8 +56,11 @@ in
     tree
 		trashy
     unar
+
+    # font
     fira-code-nerdfont
 
+    # theme
 		starship
 	];
 
@@ -65,31 +72,31 @@ in
     enable = true;
     shellAliases = myAliases;
 		initExtra = ''
-		neofetch
+    neofetch
+
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
 if [[ $(hostname) = "hwt-virtual-machine" ]]; then
-    source /opt/ros/humble/setup.zsh
-fi
+  source /opt/ros/humble/setup.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/goodmorninghwt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/goodmorninghwt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/goodmorninghwt/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/goodmorninghwt/miniconda3/bin:$PATH"
-    fi
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/home/goodmorninghwt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/home/goodmorninghwt/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/goodmorninghwt/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/home/goodmorninghwt/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
 fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 
 		'';
     zplug = {
