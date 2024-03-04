@@ -5,7 +5,8 @@ let
     ".." = "cd ..";
     s = "neofetch";
     wttr="curl wttr.in";
-    v="export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙（走shadowsocks);
+    vs="export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙（走shadowsocks);
+    v="export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙（走v2raya);
     vc="export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:20171 all_proxy=socks5://127.0.0.1:20170"; # 终端设置翻墙(走ClashX);
     nv="unset http_proxy; unset https_proxy;"; # 终端设置不翻墙;
     ip="curl cip.cc"; # 查看ip和是否翻墙;
@@ -43,6 +44,7 @@ in
 
 	home.packages = with pkgs; [
     # toys
+    gping
 		neofetch
 		neo-cowsay
     youtube-dl
@@ -56,6 +58,7 @@ in
     tree
 		trashy
     unar
+
 
     # font
     fira-code-nerdfont
@@ -72,7 +75,14 @@ in
     enable = true;
     shellAliases = myAliases;
 		initExtra = ''
+# 检查终端大小
+if [[ $(tput cols) -ge 80 && $(tput lines) -ge 24 ]]; then
     neofetch
+else
+    # 在此处添加您想要执行的其他命令或脚本
+    echo "Terminal size is not large enough for neofetch."
+fi
+
 
 fif() {
   if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi

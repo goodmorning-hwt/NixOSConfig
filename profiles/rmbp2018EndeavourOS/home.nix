@@ -27,12 +27,16 @@
 
     # ../../system/app/terminal/kitty/kitty.nix
 
-#    ../../system/app/VPN/clash.nix
+    # ../../system/app/VPN/clash.nix
     # ../../system/app/VPN/v2ray.nix
 
     # ../../system/app/browser/vivaldi.nix
 
     # ../../system/wm/hyprland/hyprland.nix
+
+
+    ../../system/development/hugo/hugo.nix
+
 
   # Priority
 	/*
