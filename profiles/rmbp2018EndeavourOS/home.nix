@@ -9,6 +9,8 @@
     # ../../system/app/editor/vim/vim.nix
     # ../../system/app/editor/vscode/vscode.nix
 
+    ../../system/app/others/thunderbird/thunderbird.nix
+
     ../../system/app/geek/lazygit.nix
     ../../system/app/geek/toys.nix
     ../../system/app/geek/joshuto/joshuto.nix
@@ -24,6 +26,8 @@
 
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
+
+
 
     # ../../system/app/terminal/kitty/kitty.nix
 

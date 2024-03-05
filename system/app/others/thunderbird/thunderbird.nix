@@ -3,9 +3,9 @@
 {
 
 	home.packages = with pkgs; [
-    flatpak
-
+    thunderbird
 	];
 
 
 }
+
