@@ -75,6 +75,10 @@ in
     enable = true;
     shellAliases = myAliases;
 		initExtra = ''
+export GOPATH=$HOME/Documents/SynologyDrive/ItsMyGo
+export PATH=$PATH$GOPATH/bin
+
+
 # 检查终端大小
 if [[ $(tput cols) -ge 80 && $(tput lines) -ge 24 ]]; then
     neofetch
