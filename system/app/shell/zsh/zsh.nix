@@ -58,6 +58,7 @@ in
     tree
 		trashy
     unar
+    dua
 
 
     # font
