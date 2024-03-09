@@ -59,6 +59,9 @@ in
 		trashy
     unar
     dua
+		pokemonsay
+		fortune
+		oneko
 
 
     # font
@@ -76,16 +79,20 @@ in
     enable = true;
     shellAliases = myAliases;
 		initExtra = ''
+
 export GOPATH=$HOME/Documents/SynologyDrive/ItsMyGo
 export PATH=$PATH$GOPATH/bin
 
 
 # 检查终端大小
 if [[ $(tput cols) -ge 80 && $(tput lines) -ge 24 ]]; then
-    neofetch
+    # neofetch
+		fortune | pokemonsay
 else
     # 在此处添加您想要执行的其他命令或脚本
-    echo "Terminal size is not large enough for neofetch."
+    # echo "Terminal size is not large enough for neofetch."
+		# pokemonsay "Terminal size is not large enough for neofetch." 
+		fortune | pokemonsay
 fi
 
 
