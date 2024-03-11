@@ -51,18 +51,20 @@ in
     autojump
     bat
     curl
-    lazygit
-    joshuto
     fzf
+    dua
+		pokemonsay
+		fortune
+
+		# Tools
     eza
     tree
 		trashy
     unar
-    dua
-		pokemonsay
-		fortune
-		oneko
-
+    joshuto
+    lazygit
+		# gobang
+		btop
 
     # font
     fira-code-nerdfont

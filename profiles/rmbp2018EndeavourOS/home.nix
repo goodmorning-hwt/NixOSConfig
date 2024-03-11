@@ -14,6 +14,7 @@
     ../../system/app/geek/lazygit.nix
     ../../system/app/geek/toys.nix
     ../../system/app/geek/joshuto/joshuto.nix
+    ../../system/app/geek/gobang/gobang.nix
 
     ../../system/app/Git/git.nix
 

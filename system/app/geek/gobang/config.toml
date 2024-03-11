@@ -1,0 +1,35 @@
+[[conn]]
+type = "mysql"
+user = "root"
+host = "localhost"
+port = 3306
+
+[[conn]]
+type = "mysql"
+user = "web"
+host = "localhost"
+port = 3306
+password = "pass"
+database = "snippetbox"
+name = "mysql snippetbox web"
+
+[[conn]]
+type = "mysql"
+user = "hwt"
+host = "localhost"
+port = 3306
+password = "GetUpAt6_30"
+database = "snippetbox"
+name = "mysql snippetbox"
+
+[[conn]]
+type = "postgres"
+user = "root"
+host = "localhost"
+port = 5432
+database = "bar"
+name = "postgres Bar DB"
+
+[[conn]]
+type = "sqlite"
+path = "/path/to/baz.db"

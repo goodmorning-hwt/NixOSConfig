@@ -1,6 +1,7 @@
 {config, pkgs, ...}:
 let
   myAliases = {
+	 mkdir = "mkdir -p";
     ll = "ls -l";
     ".." = "cd ..";
 		ra = "joshuto";
