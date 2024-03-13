@@ -55,6 +55,7 @@ in
     dua
 		pokemonsay
 		fortune
+    glow
 
 		# Tools
     eza
