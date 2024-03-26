@@ -50,6 +50,12 @@
         inherit pkgs;
         modules = [ ./profiles/rmbp2018EndeavourOS/home.nix];
       };
+
+      "hwt-ubuntu" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./profiles/ubuntu13700KF/home.nix];
+      };
+
     };
 
   };
