@@ -2,11 +2,12 @@
 
 {
 	home.packages = with pkgs; [
-		python3
-    python310Packages.pip
-    python310Packages.pip-tools
-    python310Packages.jupyter
-    conda
+		python311Full
+    python311Packages.pip
+    python311Packages.pip-tools
+    python311Packages.jupyter
+    python311Packages.virtualenv
+    # python311Packages.conda
 	];
 
 

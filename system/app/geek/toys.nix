@@ -5,6 +5,8 @@
 		neofetch
 		neo-cowsay
     autojump
+		foliate
+		tdesktop
 	];
 
 	programs.autojump = {

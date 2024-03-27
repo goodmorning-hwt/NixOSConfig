@@ -104,6 +104,26 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
+
+if [[ $(hostname) = "hwtubuntu-13700KF" ]]; then
+  source /opt/ros/humble/setup.zsh
+
+  # >>> conda initialize >>>
+  # !! Contents within this block are managed by 'conda init' !!
+  __conda_setup="$('/home/hwt-ubuntu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+  if [ $? -eq 0 ]; then
+      eval "$__conda_setup"
+  else
+      if [ -f "/home/hwt-ubuntu/miniconda3/etc/profile.d/conda.sh" ]; then
+          . "/home/hwt-ubuntu/miniconda3/etc/profile.d/conda.sh"
+      else
+          export PATH="/home/hwt-ubuntu/miniconda3/bin:$PATH"
+      fi
+  fi
+  unset __conda_setup
+  # <<< conda initialize <<<
+fi
+
 if [[ $(hostname) = "hwt-virtual-machine" ]]; then
   source /opt/ros/humble/setup.zsh
 	export PYTHONPATH=~/naoqi/pynaoqi-python2.7-2.8.6.23-linux64-20191127_152327/lib/python2.7/site-packages:$PYTHONPATH 
