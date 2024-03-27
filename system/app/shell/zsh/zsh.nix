@@ -106,6 +106,8 @@ fif() {
 
 
 if [[ $(hostname) = "hwtubuntu-13700KF" ]]; then
+   setxkbmap -option caps:swapescape
+
   source /opt/ros/humble/setup.zsh
 
   # >>> conda initialize >>>

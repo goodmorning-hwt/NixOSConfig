@@ -10,7 +10,7 @@
     ../../system/app/editor/vscode/vscode.nix
 
     ../../system/app/geek/lazygit.nix
-    ../../system/app/geek/toys.nix
+    # ../../system/app/geek/toys.nix
     ../../system/app/geek/joshuto/joshuto.nix
 
     ../../system/app/Git/git.nix
@@ -70,6 +70,7 @@
 		vim
 		unzip
 		zip
+		foliate
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
