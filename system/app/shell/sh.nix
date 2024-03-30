@@ -17,10 +17,10 @@ let
 in
 {
 
-  programs.bash = {
-    enable = true;
-    shellAliases = myAliases;
-  };
+  # programs.bash = {
+  #   enable = true;
+  #   shellAliases = myAliases;
+  # };
 
   programs.zsh = {
     enable = true;
