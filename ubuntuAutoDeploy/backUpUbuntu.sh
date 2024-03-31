@@ -4,8 +4,8 @@
 backup_dir="$HOME/.dotfiles/ubuntuAutoDeploy/backUpFiles"
 
 # Check if backup directory exists
-if [ ! -d "$backup_dir" ]; then
-    echo "Backup directory not found."
+if [ ! -d "$backup_dir" ]; the
+    mkdir -p "$backup_dir"
     exit 1
 fi
 
