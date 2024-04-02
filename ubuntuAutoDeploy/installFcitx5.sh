@@ -2,10 +2,13 @@
 
 # Define the list of packages to install
 packages=(
-    warp-terminal
-    synology-drive
-    sunloginclient
-    # Add more packages here
+	fcitx5
+	fcitx5-chinese-addons
+	fcitx5-frontend-gtk4
+	fcitx5-frontend-gtk3
+	fcitx5-frontend-gtk2
+	fcitx5-frontend-qt5
+	fcitx5-rime
 )
 
 # Update the apt package index
