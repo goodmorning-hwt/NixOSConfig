@@ -9,7 +9,7 @@ git clone https://github.com/jothi-prasath/gnomintosh.git
 cd gnomintosh
 
 # Run the main installation script
-./main.sh
+bash main.sh
 
 echo "Gnomintosh theme installation complete."
 echo "Note: By default, wallpapers are installed in the Pictures folder in your home directory."
