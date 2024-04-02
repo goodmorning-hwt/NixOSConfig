@@ -14,7 +14,13 @@ SCRIPTS=(
     "installV2raya.sh"
     "setGnome.sh"
     "setAutoStart.sh"
-    "installSomeOtherApps.sh"
+
+		"installNixPackageManager.sh"
+		"installHomeManager.sh"
+		"deployNixConfig.sh"
+
+		"installGnomintosh.sh"
+
 )
 
 # Change directory to the scripts directory
