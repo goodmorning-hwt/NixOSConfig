@@ -20,7 +20,6 @@ else
 fi
 
 
-sh <(curl -L https://nixos.org/nix/install) --daemon
 
 
 # Install nix (Multi-User Installation)
