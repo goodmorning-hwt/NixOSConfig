@@ -12,4 +12,4 @@ git clone git@github.com:goodmorning-hwt/ubuntu-i3-config.git
 mv NixOSConfig/ .dotfiles
 cd ./.dotfiles/ubuntuAutoDeploy
 
-bash exec.sh
+bash RUNME.sh
