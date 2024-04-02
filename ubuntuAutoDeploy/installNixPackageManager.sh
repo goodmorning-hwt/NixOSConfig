@@ -29,5 +29,6 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # Modify /etc/nix/nix.conf
 echo "Modifying /etc/nix/nix.conf..."
-sudo sed -i '/^#*experimental-features/s/^#*/experimental-features = nix-command flakes/' /etc/nix/nix.conf
+# sudo sed -i '/^#*experimental-features/s/^#*/experimental-features = nix-command flakes/' /etc/nix/nix.conf
+sudo sh -c 'echo "experimental-features = nix-command flakes" >> /etc/nix/nix.conf'
 
