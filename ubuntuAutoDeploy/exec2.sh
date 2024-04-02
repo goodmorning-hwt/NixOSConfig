@@ -13,6 +13,7 @@ SCRIPTS=(
 
 		"installGnomintosh.sh"
 
+		"installV2raya.sh"
 )
 
 # Change directory to the scripts directory
