@@ -8,10 +8,12 @@ SCRIPTS_DIR="./."
 
 # List of scripts to execute
 SCRIPTS=(
-		"installHomeManager.sh"
-		"deployNixConfig.sh"
-
-		"installGnomintosh.sh"
+		"installFlathub.sh"
+		"installSpacemacs.sh"
+		"installV2raya.sh"
+		"setAutoStart.sh"
+		"installNixPackageManager.sh"
+		"setGnome.sh"
 
 )
 
@@ -28,4 +30,4 @@ for script in "${SCRIPTS[@]}"; do
     fi
 done
 
-echo "All scripts executed."
+echo "Please Open A New Shell and run 'bash exec2.sh'."
