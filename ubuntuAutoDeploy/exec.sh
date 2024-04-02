@@ -9,7 +9,7 @@ SCRIPTS_DIR="./."
 # List of scripts to execute
 SCRIPTS=(
 		"installFlathub.sh"
-		"installFcitx5.sh"
+		"installIbusRime.sh"
 		"installSpacemacs.sh"
 		"setAutoStart.sh"
 		"installNixPackageManager.sh"
