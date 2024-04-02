@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+chmod +x *.sh
+
 # Define the directory containing the .sh files
 SCRIPTS_DIR="./."
 
@@ -7,13 +10,11 @@ SCRIPTS_DIR="./."
 SCRIPTS=(
     "installFlathub.sh"
     "installGnomintosh.sh"
-    "installNixPackageManager.sh"
     "installSpacemacs.sh"
     "installV2raya.sh"
     "setGnome.sh"
     "setAutoStart.sh"
     "installSomeOtherApps.sh"
-    "deployNixConfig.sh"
 )
 
 # Change directory to the scripts directory
