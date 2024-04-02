@@ -28,3 +28,8 @@ fi
 echo "Git configuration updated:"
 echo "Username: $username"
 echo "Email: $email"
+
+echo "-----------------"
+
+ssh-keygen -t ed25519 -C "goodmorning_hwt@sjtu.edu.cn"
+cat ~/.ssh/id_ed25519.pub
