@@ -2,7 +2,6 @@
 
 # Define the list of packages to install
 packages=(
-
     warp-terminal
     synology-drive
     sunloginclient
