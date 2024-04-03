@@ -19,8 +19,8 @@
     # ../../system/app/inputMethod/fcitx5/fcitx5.nix
     # ../../system/app/inputMethod/rime/rime.nix
 
-    ../../system/app/lang/python.nix
-    ../../system/app/lang/go.nix
+    # ../../system/app/lang/python.nix
+    # ../../system/app/lang/go.nix
 
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
