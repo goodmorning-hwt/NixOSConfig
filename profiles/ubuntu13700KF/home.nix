@@ -15,9 +15,9 @@
 
     ../../system/app/Git/git.nix
 
-    ../../system/app/inputMethod/ibus/ibus.nix
-    ../../system/app/inputMethod/fcitx5/fcitx5.nix
-    ../../system/app/inputMethod/rime/rime.nix
+    # ../../system/app/inputMethod/ibus/ibus.nix
+    # ../../system/app/inputMethod/fcitx5/fcitx5.nix
+    # ../../system/app/inputMethod/rime/rime.nix
 
     ../../system/app/lang/python.nix
     ../../system/app/lang/go.nix
