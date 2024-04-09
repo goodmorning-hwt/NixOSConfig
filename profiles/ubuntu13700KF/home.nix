@@ -5,7 +5,7 @@
 	# Each time before you import, you should stage your file.
 
     ../../system/app/editor/spacemacs/spacemacs.nix
-    ../../system/app/editor/lunarvim/lunarvim.nix
+    # ../../system/app/editor/lunarvim/lunarvim.nix
     ../../system/app/editor/vim/vim.nix
     ../../system/app/editor/vscode/vscode.nix
 
@@ -28,7 +28,8 @@
     # ../../system/app/terminal/kitty/kitty.nix
 
 #    ../../system/app/VPN/clash.nix
-    ../../system/app/VPN/v2ray.nix
+    # ../../system/app/VPN/v2ray.nix
+
 
 #    ../../system/app/browser/vivaldi.nix
 

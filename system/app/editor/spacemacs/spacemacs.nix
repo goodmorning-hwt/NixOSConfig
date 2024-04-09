@@ -15,7 +15,7 @@
     aspellDicts.en
 		cmigemo
 		ispell
-    cmake
+#    cmake
     libtool
     libvterm
 	];
