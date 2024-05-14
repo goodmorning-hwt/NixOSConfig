@@ -13,6 +13,7 @@
     # ../../system/app/geek/toys.nix
     ../../system/app/geek/joshuto/joshuto.nix
 
+    ../../system/app/others/PDFReader/zathura.nix
     ../../system/app/Git/git.nix
 
     # ../../system/app/inputMethod/ibus/ibus.nix
