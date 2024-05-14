@@ -10,6 +10,7 @@
     # ../../system/app/editor/vscode/vscode.nix
 
     ../../system/app/others/thunderbird/thunderbird.nix
+    ../../system/app/others/PDFReader/zathura.nix
 
     ../../system/app/geek/lazygit.nix
     ../../system/app/geek/toys.nix
@@ -80,6 +81,7 @@
 		vim
 		unzip
 		zip
+		texliveFull
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
