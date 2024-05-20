@@ -14,7 +14,7 @@
     ../../system/app/geek/joshuto/joshuto.nix
 
     ../../system/app/others/PDFReader/zathura.nix
-    ../../system/app/Git/git.nix
+    # ../../system/app/Git/git.nix
 
     # ../../system/app/inputMethod/ibus/ibus.nix
     # ../../system/app/inputMethod/fcitx5/fcitx5.nix
