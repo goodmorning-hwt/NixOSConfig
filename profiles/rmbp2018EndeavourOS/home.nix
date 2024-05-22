@@ -19,6 +19,8 @@
 
     ../../system/app/Git/git.nix
 
+    ../../system/app/others/downloader/motrix/motrix.nix
+
     # ../../system/app/inputMethod/ibus/ibus.nix
     # ../../system/app/inputMethod/fcitx5/fcitx5.nix
     # ../../system/app/inputMethod/rime/rime.nix
