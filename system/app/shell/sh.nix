@@ -13,6 +13,8 @@ let
 		switch = " nrs && hms";
 		doom = "~/.emacs.d/bin/doom";
 
+		zip280 = "parent_folder=$(basename \"$(pwd)\"); zip -r \"\${parent_folder}.zip\" *.cpp *.h";
+
   };
 in
 {
