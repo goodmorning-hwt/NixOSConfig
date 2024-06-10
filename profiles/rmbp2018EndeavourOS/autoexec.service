@@ -1,5 +1,5 @@
 [Unit]
-Description=AutoExec
+Description=autoexec
 [Service]
 ExecStart=/home/hwt/.dotfiles/profiles/rmbp2018EndeavourOS/AutoExec.sh
 [Install]
