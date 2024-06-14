@@ -113,6 +113,13 @@ fif() {
 
 
 if [[ $(hostname) = "hwtubuntu-13700KF" ]]; then
+
+
+
+# >> autojump
+. /usr/share/autojump/autojump.sh
+# << autojump
+
    setxkbmap -option caps:swapescape
 
   source /opt/ros/humble/setup.zsh
