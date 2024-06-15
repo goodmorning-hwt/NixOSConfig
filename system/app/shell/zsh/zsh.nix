@@ -74,6 +74,7 @@ in
     lazygit
 		# gobang
 		btop
+		thefuck
 
     # font
     fira-code-nerdfont
@@ -83,6 +84,10 @@ in
 	];
 
   programs.starship = {
+    enable = true;
+  };
+
+  programs.thefuck = {
     enable = true;
   };
 
