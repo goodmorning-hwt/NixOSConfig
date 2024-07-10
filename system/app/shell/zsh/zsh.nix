@@ -163,9 +163,9 @@ if [[ $(hostname) = "hwt-virtual-machine" ]]; then
   fi
   unset __conda_setup
   # <<< conda initialize <<<
+	export TERM=xterm
 fi
 
-export TERM=xterm-direct
 		'';
     zplug = {
       enable = true;
