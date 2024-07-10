@@ -165,6 +165,7 @@ if [[ $(hostname) = "hwt-virtual-machine" ]]; then
   # <<< conda initialize <<<
 fi
 
+export TERM=xterm-direct
 		'';
     zplug = {
       enable = true;
