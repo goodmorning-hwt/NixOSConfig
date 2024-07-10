@@ -2,6 +2,8 @@
 let
   myAliases = {
 
+	 ubt = "kitty +kitten ssh -p 52212 hwt-ubuntu@ubt.imhwt.site";
+
 	 mkdir = "mkdir -p";
     ll = "ls -l";
     ".." = "cd ..";
@@ -163,7 +165,7 @@ if [[ $(hostname) = "hwt-virtual-machine" ]]; then
   fi
   unset __conda_setup
   # <<< conda initialize <<<
-	export TERM=xterm
+	# export TERM=xterm
 fi
 
 		'';
