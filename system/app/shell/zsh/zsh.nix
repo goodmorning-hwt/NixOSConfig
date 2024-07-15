@@ -4,6 +4,8 @@ let
 
 	 ubt = "kitty +kitten ssh -p 52212 hwt-ubuntu@ubt.imhwt.site";
 	 kssh = "kitty +kitten ssh";
+   kmz = "kitty_margin_zero";
+   kmd = "kitty_margin_default";
    kitty_margin_zero = "kitty @ set-spacing padding-left=0 padding-top=0 padding-bottom=0 padding-right=0";
    kitty_margin_default = "kitty @ set-spacing padding-left=default padding-top=default padding-bottom=default padding-right=default";
 
