@@ -81,6 +81,8 @@ in
 		btop
 		thefuck
 
+    sshfs
+
     # font
     fira-code-nerdfont
 
