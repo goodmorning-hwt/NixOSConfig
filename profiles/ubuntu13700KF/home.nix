@@ -4,6 +4,10 @@
   imports = [
 	# Each time before you import, you should stage your file.
 
+    # ../../system/wm/hyprland_simple/hyprland.nix
+
+    ../../system/app/shell/sh.nix
+
     ../../system/app/editor/spacemacs/spacemacs.nix
     # ../../system/app/editor/lunarvim/lunarvim.nix
     ../../system/app/editor/vim/vim.nix
@@ -148,7 +152,6 @@
   */
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
 
 
 }
