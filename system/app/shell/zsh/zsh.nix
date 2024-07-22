@@ -3,6 +3,8 @@ let
   myAliases = {
 
 	 ubt = "kitty +kitten ssh -p 52212 hwt-ubuntu@ubt.imhwt.site";
+	 nas = "kitty +kitten ssh -p 52211 goodmorning_hwt@nas.imhwt.site";
+	 limx = "kitty +kitten ssh -p 22 limx@10.192.1.2";
 	 kssh = "kitty +kitten ssh";
    kmz = "kitty_margin_zero";
    kmd = "kitty_margin_default";
