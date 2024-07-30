@@ -36,6 +36,7 @@ let
     # cat="bat";
     # ll = "ls -l";
     lv="lvim";
+    open="xdg-open";
     o="open";
     "o."="open .";
     gcc151="gcc -O2 -Werror -Wall -Wextra -Wconversion -Wno-unused-result -Wvla -pedantic -std=c11";
