@@ -56,6 +56,11 @@
         modules = [ ./profiles/ubuntu13700KF/home.nix];
       };
 
+      "hwt-wsl-ubuntu" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./profiles/ubuntuWSL13900H/home.nix];
+      };
+
     };
 
   };
