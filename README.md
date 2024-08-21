@@ -70,3 +70,4 @@ echo "deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2ray
 sudo apt update
 sudo apt install v2raya v2ray ## you can install xray package instead of if you want
 
+### MY NAME IS XXX
