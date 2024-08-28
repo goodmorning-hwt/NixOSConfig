@@ -4,14 +4,8 @@
   imports = [
 	# Each time before you import, you should stage your file.
 
-    # ../../system/wm/hyprland_simple/hyprland.nix
-
     ../../system/app/shell/sh.nix
-
-    # ../../system/app/editor/spacemacs/spacemacs.nix
-    # ../../system/app/editor/lunarvim/lunarvim.nix
     ../../system/app/editor/vim/vim.nix
-    # ../../system/app/editor/vscode/vscode.nix
 
     ../../system/app/geek/lazygit.nix
     # ../../system/app/geek/toys.nix
@@ -33,15 +27,6 @@
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
 
-    # ../../system/app/terminal/kitty/kitty.nix
-
-#    ../../system/app/VPN/clash.nix
-    # ../../system/app/VPN/v2ray.nix
-
-
-#    ../../system/app/browser/vivaldi.nix
-
-#    # ../../system/wm/hyprland/hyprland.nix
 
   # Priority
 	/*
@@ -85,9 +70,11 @@
 		figlet
 		meld
 		neovim
+		aria2
 		emacs29-pgtk
-		dolphin
-
+		guile
+    # nodejs
+    # nodePackages.npm
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
