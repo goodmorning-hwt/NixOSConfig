@@ -36,6 +36,33 @@ home-manager switch --flake ~/.dotfiles"
 
 6. Have fun!
 
+### Install on Ubuntu(I use wsl)
+1. Install Ubuntu
+
+2. Install [Nix(Single-User Installatioin)](https://nixos.org/download)
+
+3. Edit `$HOME/.config/nix/nix.conf` (if the file does not exist, create it)
+	```sh
+	sudo vim /etc/nix/nix.conf
+	```
+
+	add one line:
+	```conf
+	experimental-fetures = nix-command flakes
+	```
+4. install asdf 
+I use asdf to manage my development environment
+use `asdf.sh` in my `myScript` Directory.
+
+5. install [rebos](https://gitlab.com/Oglo12/rebos/)
+
+```sh
+cargo install rebos
+rebos setup
+# if you have cloned my rebos config
+rebos gen current build
+```
+
 
 ### Install on Arch (I am only introducing my habbit)
 1. Install Arch (The script [ArchInstall](https://github.com/archlinux/archinstall) is recommanded).
@@ -70,4 +97,5 @@ echo "deb [signed-by=/etc/apt/keyrings/v2raya.asc] https://apt.v2raya.org/ v2ray
 sudo apt update
 sudo apt install v2raya v2ray ## you can install xray package instead of if you want
 
-### MY NAME IS XXX
+
+
