@@ -9,6 +9,7 @@
 
     ../../system/app/geek/lazygit.nix
     # ../../system/app/geek/toys.nix
+    ../../system/app/geek/autojump.nix
     ../../system/app/geek/joshuto/joshuto.nix
 
     ../../system/app/others/PDFReader/zathura.nix
