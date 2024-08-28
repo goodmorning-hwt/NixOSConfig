@@ -5,8 +5,10 @@ ssh -T git@github.com
 
 cd ~
 
-git clone git@github.com:goodmorning-hwt/NixOSConfig.git
-gis clone git@github.com:goodmorning-hwt/.spacemacs.d.git
+mkdir -p ~/.config/rebos
+git clone git@github.com:goodmorning-hwt/NixOSConfig.git ~/.dotfiles
+git clone git@github.com:goodmorning-hwt/.spacemacs.d.git
+git clone git@github.com:goodmorning-hwt/rebos_config.git ~/.config/rebos
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
-mv NixOSConfig/ .dotfiles
 
