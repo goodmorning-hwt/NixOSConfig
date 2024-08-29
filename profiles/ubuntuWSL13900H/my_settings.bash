@@ -1,15 +1,9 @@
-
 # host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
 host_ip=$(echo 172.30.80.1)
 export ALL_PROXY="http://$host_ip:7890"
 export http_proxy="$host_ip:7890"
 export https_proxy="$host_ip:7890"
-# ~/proxy.sh set
-~/proxy.sh test
 
-# >> autojump
-[[ -s /home/hwt-wsl-ubuntu/.autojump/etc/profile.d/autojump.sh ]] && source /home/hwt-wsl-ubuntu/.autojump/etc/profile.d/autojump.sh
-# << autojump
 
 
 # Aliases
@@ -58,7 +52,7 @@ export PATH=/home/hwt-wsl-ubuntu/.local/bin:$PATH
 # <<lvim
 
 # >> hwt write for ros
-source ~/codeSpace/my_scripts/SOURCEME.sh
+source ~/SynologyDrive/codeSpace/my_scripts/SOURCEME.sh
 # <<
 
 # >> hwt write for blurry firefox
@@ -77,4 +71,5 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(starship init bash)"
 
-eval "$(thefuck --alias)"
+
+macchina -t Hydrogen
