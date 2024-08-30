@@ -1,7 +1,7 @@
 {config, pkgs, lib, ...}:
 let
   myAliases = {
-
+	 j = "z";
 	 ubt = "kitty +kitten ssh -p 52212 hwt-ubuntu@ubt.imhwt.site";
 	 nas = "kitty +kitten ssh -p 52211 goodmorning_hwt@nas.imhwt.site";
 	 limx = "kitty +kitten ssh -p 22 limx@10.192.1.2";
@@ -87,6 +87,7 @@ in
 		thefuck
 
     sshfs
+		z-lua
 
     # font
     fira-code-nerdfont
@@ -101,6 +102,13 @@ in
 
   programs.thefuck = {
     enable = true;
+  };
+
+  programs.z-lua = {
+    enable = true;
+    enableAliases = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.zsh = {
@@ -191,6 +199,7 @@ fi
         { name = "zsh-users/zsh-history-substring-search";}
         { name = "hlissner/zsh-autopair";}
         { name = "chisui/zsh-nix-shell";}
+#         { name = "rupa/z";}
       ];
     };
   };
