@@ -46,6 +46,9 @@ alias ok='python3 ok --local -q'
 alias okq='python3 ok --local -q'
 alias em='emacs -nw'
 alias vhr='source ~/limx_rl/DrEureka-pointfoot/venv/bin/activate'
+alias rgc='rebos gen commmit'
+alias rgb='rebos gen current build'
+
 
 # >> lvim
 export PATH=/home/hwt-wsl-ubuntu/.local/bin:$PATH
@@ -63,9 +66,6 @@ export MOZ_ENABLE_WAYLAND=1
 
 
 
-function lk {
-  cd "$(walk "$@")"
-}
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -73,3 +73,7 @@ eval "$(starship init bash)"
 
 
 macchina -t Hydrogen
+
+export EDITOR="lvim"
+export VISUAL="emacs"
+
