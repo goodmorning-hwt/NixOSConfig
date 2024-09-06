@@ -1,8 +1,8 @@
 # host_ip=$(cat /etc/resolv.conf |grep "nameserver" |cut -f 2 -d " ")
 host_ip=$(echo 172.30.80.1)
 export ALL_PROXY="http://$host_ip:7890"
-export http_proxy="$host_ip:7890"
-export https_proxy="$host_ip:7890"
+export http_proxy="http://$host_ip:7890"
+export https_proxy="http://$host_ip:7890"
 
 
 
