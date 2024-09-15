@@ -45,9 +45,17 @@ alias yyf='ssh -p 22 yifei@192.168.1.127'
 alias ok='python3 ok --local -q'
 alias okq='python3 ok --local -q'
 alias em='emacs -nw'
+alias emc='emacsclient -nw'
+alias kem='emacsclient -e "(kill-emacs)"'
+alias ems='emacs --daemon'
 alias vhr='source ~/limx_rl/DrEureka-pointfoot/venv/bin/activate'
 alias rgc='rebos gen commmit'
 alias rgb='rebos gen current build'
+alias venv='source ./venv/bin/activate'
+alias cda='conda deactivate'
+alias ca='conda activate'
+alias psg='ps aux | grep '
+alias pdf2ppm='pdftoppm'
 
 
 # >> lvim
@@ -74,6 +82,8 @@ eval "$(starship init bash)"
 
 macchina -t Hydrogen
 
-export EDITOR="lvim"
-export VISUAL="emacs"
+export EDITOR="vim"
+export VISUAL="vim"
+
+
 
