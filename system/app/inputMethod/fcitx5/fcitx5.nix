@@ -2,6 +2,10 @@
 
 {
 	home.packages = with pkgs; [
+	fcitx5
+	fcitx5-gtk
+	fcitx5-rime
+	fcitx5-catppuccin
 	];
 
 
