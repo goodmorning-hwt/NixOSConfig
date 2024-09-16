@@ -28,6 +28,8 @@
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
 
+    ../../system/app/development/direnv.nix
+
 
   # Priority
 	/*
@@ -81,6 +83,8 @@
     latex2html
 		skopeo
 		wakatime
+
+    nixpkgs-fmt
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
