@@ -2,13 +2,14 @@
 
 {
 	home.packages = with pkgs; [
-	  clash-verge	
+	  # clash-verge	
+	  clash-nyanpasu
 	];
 
-	programs.clash-verge = {
-		enable = true;
-		autoStart = true;
-	};
+	# programs.clash-verge = {
+	# 	enable = true;
+	# 	autoStart = true;
+	# };
 
   
 }
