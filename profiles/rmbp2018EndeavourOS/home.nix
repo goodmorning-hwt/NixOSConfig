@@ -1,8 +1,8 @@
-{ config, pkgs, callPackage ,... }:
+{ config, pkgs, callPackage, ... }:
 
 {
   imports = [
-	# Each time before you import, you should stage your file.
+    # Each time before you import, you should stage your file.
 
     # ../../system/app/editor/spacemacs/spacemacs.nix
     # ../../system/app/editor/lunarvim/lunarvim.nix
@@ -22,11 +22,11 @@
     ../../system/app/others/downloader/motrix/motrix.nix
 
     # ../../system/app/inputMethod/ibus/ibus.nix
-    ../../system/app/inputMethod/fcitx5/fcitx5.nix
+    # ../../system/app/inputMethod/fcitx5/fcitx5.nix
     # ../../system/app/inputMethod/rime/rime.nix
 
-#    ../../system/app/lang/python.nix
-#    ../../system/app/lang/go.nix
+    #    ../../system/app/lang/python.nix
+    #    ../../system/app/lang/go.nix
 
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
@@ -35,7 +35,7 @@
 
     # ../../system/app/terminal/kitty/kitty.nix
 
-    ../../system/app/VPN/clash.nix
+    # ../../system/app/VPN/clash.nix
     # ../../system/app/VPN/v2ray.nix
 
     # ../../system/app/browser/vivaldi.nix
@@ -46,16 +46,16 @@
     ../../system/development/hugo/hugo.nix
 
 
-  # Priority
-	/*
-	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
-	value : 100 priority
-	lib.mkOverride somevalue  specific priority
-  lib.mkForce
+    # Priority
+    /*
+       	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
+       	value : 100 priority
+       	lib.mkOverride somevalue  specific priority
+      lib.mkForce
 
-	same attribute set automatically merge
-	*/
-	];
+       	same attribute set automatically merge
+     	*/
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   # home.username = "goodmorninghwt";
@@ -78,13 +78,15 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     hello
-		wget
-		curl
-		vim
-		unzip
-		zip
-		texliveFull
-		meld
+    wget
+    curl
+    vim
+    unzip
+    zip
+    texliveFull
+    meld
+    nixpkgs-fmt
+    ddns-go
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -130,7 +132,7 @@
     # EDITOR = "emacs";
     EDITOR = "vim";
   };
-  
+
 
   # home.file.".config/hypr/hyprland.conf".text = ''
   #   something nice;
@@ -150,7 +152,7 @@
     How To Rollback:
     home-manager generations
     copy-the-listed-path/activate
-  */ 
+  */
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
