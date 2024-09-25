@@ -87,6 +87,9 @@
     meld
     nixpkgs-fmt
     ddns-go
+    chromium
+    emacs
+    mattermost
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
