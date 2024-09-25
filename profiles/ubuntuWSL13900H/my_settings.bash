@@ -4,8 +4,6 @@ export ALL_PROXY="http://$host_ip:7890"
 export http_proxy="http://$host_ip:7890"
 export https_proxy="http://$host_ip:7890"
 
-
-
 # Aliases
 alias ..='cd ..'
 alias bloat='nix path-info -Sh /run/current-system'
@@ -56,7 +54,8 @@ alias cda='conda deactivate'
 alias ca='conda activate'
 alias psg='ps aux | grep '
 alias pdf2ppm='pdftoppm'
-
+alias arch='ssh -p 52213 hwt@arch.imhwt.site'
+alias ubt='ssh -p 52212 hwt_ubuntu@ubt.imhwt.site'
 
 # >> lvim
 export PATH=/home/hwt-wsl-ubuntu/.local/bin:$PATH
@@ -70,20 +69,24 @@ source ~/SynologyDrive/codeSpace/my_scripts/SOURCEME.sh
 export MOZ_ENABLE_WAYLAND=1
 # <<
 
-
-
-
-
-
 export PATH="$HOME/.cargo/bin:$PATH"
 
 eval "$(starship init bash)"
-
 
 macchina -t Hydrogen
 
 export EDITOR="vim"
 export VISUAL="vim"
 
+check_synology_drive(){
+    if ! pgrep "cloud-drive-ui" > /dev/null; then
+        echo "Starting Synoloy Drive..."
+        synology-drive > /dev/null 2>&1 &
+    else
+        :
 
+    fi
 
+}
+
+check_synology_drive
