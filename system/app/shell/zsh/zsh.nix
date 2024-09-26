@@ -115,6 +115,7 @@ in
     enable = true;
     shellAliases = myAliases;
 		initExtra = ''
+source ~/.dotfiles/profiles/my_alias.bash
 
 if [ -e /home/hwt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hwt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
