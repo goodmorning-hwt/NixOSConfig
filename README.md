@@ -39,7 +39,7 @@ home-manager switch --flake ~/.dotfiles"
 
 6. Have fun!
 
-### Install on Ubuntu(I use wsl)
+### Install on WSL
 1. Install Ubuntu
 
 2. Install [Nix(Single-User Installatioin)](https://nixos.org/download)
@@ -69,3 +69,20 @@ rebos setup
 rebos gen current build
 ```
 
+### Install on a desktop(Btw I use Arch)
+
+1. Do the same as you install this on WSL.
+
+2. You need to set your input method and VPN. I really want to find a *nix* way to install them but I failed. Just do not work.
+
+#### Install the Input method:
+
+Install `fcitx5` `fcitx-im` `fcitx` `fcitx5-rime` `fcitx5-configtool` `fcitx5-qt` `fcitx5-gtk` `fcitx5-chinese-addons` .
+
+For Japanese Input, install `fcitx5-anthy` or `fcitx5-mozc`. The first one is more lightweight and the second one is made by google.
+
+#### Install the VPN
+
+If you use v2raya, just refer to the official website.
+
+If you use Clash, `clash-nyanpasu` will be a good choice.
