@@ -75,7 +75,7 @@ rebos gen current build
 
 2. You need to set your input method and VPN. I really want to find a *nix* way to install them but I failed. Just do not work.
 
-#### Install the Input method:
+#### Install the Input method
 
 Install `fcitx5` `fcitx-im` `fcitx` `fcitx5-rime` `fcitx5-configtool` `fcitx5-qt` `fcitx5-gtk` `fcitx5-chinese-addons` .
 
@@ -86,3 +86,9 @@ For Japanese Input, install `fcitx5-anthy` or `fcitx5-mozc`. The first one is mo
 If you use v2raya, just refer to the official website.
 
 If you use Clash, `clash-nyanpasu` will be a good choice.
+
+## The problems I have met
+
+### Input method not working
+
+because if nix locked the rime config directory, fcitx5-rime can not deploy the config. You need to make Rime config repository an individual repository, instead of managing them by nix.
