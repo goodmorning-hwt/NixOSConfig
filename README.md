@@ -92,3 +92,7 @@ If you use Clash, `clash-nyanpasu` will be a good choice.
 ### Input method not working
 
 because if nix locked the rime config directory, fcitx5-rime can not deploy the config. You need to make Rime config repository an individual repository, instead of managing them by nix.
+
+### VSCodeVim doesn't recognize the <Escape>/<Capslock> swap
+
+Change the VSCode `Keyboard: Dispatch` setting to `keyCode` instead of `code`.
