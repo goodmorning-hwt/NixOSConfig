@@ -89,7 +89,8 @@
     ddns-go
     chromium
     emacs
-    mattermost
+    mattermost-desktop
+    
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -134,6 +135,7 @@
   home.sessionVariables = {
     # EDITOR = "emacs";
     EDITOR = "vim";
+    # PATH = "${builtins.getEnv "HOME"}/.local/bin:${builtins.getEnv "HOME"}/.local/share/JetBrains/Toolbox/scripts:${builtins.getEnv "PATH"}";
   };
 
 
