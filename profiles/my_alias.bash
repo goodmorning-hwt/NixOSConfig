@@ -52,4 +52,6 @@ alias arch='ssh -p 52213 hwt@arch.imhwt.site'
 alias ubt='ssh -p 52212 hwt_ubuntu@ubt.imhwt.site'
 alias zrn_dom='ssh -p 48222 mr482@192.168.31.47'
 alias zrn_wsl='ssh -p 48222 mr482@$host_ip'
+alias cm='cmake -S . -B build && cmake --build build'
 alias gctest='function _gctest() { git commit --allow-empty -m "test($1): joj"; }; _gctest'
+
