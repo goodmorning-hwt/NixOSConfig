@@ -55,3 +55,9 @@ alias zrn_wsl='ssh -p 48222 mr482@$host_ip'
 alias cm='cmake -S . -B build && cmake --build build'
 alias gctest='function _gctest() { git commit --allow-empty -m "test($1): joj"; }; _gctest'
 
+jojsubmit() {
+        git commit --allow-empty -m"joj. $@" ; git push
+}
+alias joj-submit=jojsubmit
+alias js=jojsubmit
+alias gcmsg='git add . && git cz c'
