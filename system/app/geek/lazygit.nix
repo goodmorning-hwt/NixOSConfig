@@ -4,7 +4,8 @@
 	home.packages = with pkgs; [
 		git
 		git-lfs
-	  lazygit
+        lazygit
+        commitizen
 	];
 
 	programs.lazygit = {
