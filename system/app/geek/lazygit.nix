@@ -6,6 +6,8 @@
 		git-lfs
         lazygit
         commitizen
+			nodePackages.conventional-changelog-cli
+
 	];
 
 	programs.lazygit = {

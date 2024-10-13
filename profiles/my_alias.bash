@@ -61,3 +61,4 @@ jojsubmit() {
 alias joj-submit=jojsubmit
 alias js=jojsubmit
 alias gcmsg='git add . && git cz c'
+alias vg='valgrind --leak-check=full '
