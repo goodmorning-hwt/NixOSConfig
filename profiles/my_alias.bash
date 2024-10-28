@@ -62,3 +62,5 @@ alias joj-submit=jojsubmit
 alias js=jojsubmit
 alias gcmsg='git add . && git cz c'
 alias vg='valgrind --leak-check=full '
+alias p2ssh='ssh goodmorning_hwt@111.186.59.59'
+alias p2sshk='kitty +kitten ssh goodmorning_hwt@111.186.59.59'
