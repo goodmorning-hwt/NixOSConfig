@@ -25,7 +25,7 @@ alias s='neofetch'
 alias switch=' nrs && hms'
 alias tree='eza --tree --icons --tree'
 alias update_spacemacs_dotfile='cd ~/.dotfiles/system/app/editor/spacemacs && trash spacemacs.el.bk && mv ./spacemacs.el ./spacemacs.el.bk && cp ~/.spacemacs ~/.dotfiles/system/app/editor/spacemacs/spacemacs.el'
-alias v='export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170'
+alias v='export http_proxy=http://127.0.0.1:20171;export https_proxy=http://127.0.0.1:20171'
 alias vc='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:20171 all_proxy=socks5://127.0.0.1:20170'
 alias vs='export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170'
 alias wttr='curl wttr.in'
@@ -64,3 +64,12 @@ alias gcmsg='git add . && git cz c'
 alias vg='valgrind --leak-check=full '
 alias p2ssh='ssh 522370910172@111.186.59.59'
 alias p2sshk='kitty +kitten ssh 522370910172@111.186.59.59'
+
+c() {
+    "$@" | wl-copy
+}
+
+e() {
+    "$@" > explorer.exe
+}
+
