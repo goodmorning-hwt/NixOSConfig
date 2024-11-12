@@ -20,28 +20,27 @@ image_default = [
 ]
 
 video_default = [
-  { command = "vlc", confirm_exit = true },
   { command = "mpv", args = [
     "--",
   ], fork = true, silent = true },
-  { command = "mediainfo", confirm_exit = true },
   { command = "mpv", args = [
     "--mute",
     "on",
     "--",
   ], fork = true, silent = true },
+  { command = "mediainfo", confirm_exit = true },
 ]
 
 text_default = [
+  { command = "lvim" },
   { command = "vim" },
-  { command = "micro" },
   { command = "gedit", fork = true, silent = true },
   { command = "bat", args = [
     "--paging=always",
   ] },
 ]
 
-reader_default = [{ command = "zathura", fork = true, silent = true }]
+reader_default = [{ command = "evince", fork = true, silent = true }]
 
 libreoffice_default = [{ command = "libreoffice", fork = true, silent = true }]
 
@@ -55,7 +54,6 @@ heic.inherit = "image_default"
 jpeg.inherit = "image_default"
 jpe.inherit = "image_default"
 jpg.inherit = "image_default"
-jxl.inherit = "image_default"
 pgm.inherit = "image_default"
 png.inherit = "image_default"
 ppm.inherit = "image_default"
@@ -71,19 +69,11 @@ tiff.app_list = [
 ]
 
 ## audio formats
-aac.inherit = "audio_default"
-ac3.inherit = "audio_default"
-aiff.inherit = "audio_default"
-ape.inherit = "audio_default"
-dts.inherit = "audio_default"
 flac.inherit = "audio_default"
 m4a.inherit = "audio_default"
 mp3.inherit = "audio_default"
-oga.inherit = "audio_default"
 ogg.inherit = "audio_default"
-opus.inherit = "audio_default"
 wav.inherit = "audio_default"
-wv.inherit = "audio_default"
 
 ## video formats
 avi.inherit = "video_default"
@@ -126,8 +116,6 @@ log.inherit = "text_default"
 md.inherit = "text_default"
 micro.inherit = "text_default"
 ninja.inherit = "text_default"
-norg.inherit = "text_default"
-org.inherit = "text_default"
 py.inherit = "text_default"
 rkt.inherit = "text_default"
 rs.inherit = "text_default"
@@ -225,7 +213,7 @@ tex.app_list = [
   { command = "pdflatex" },
 ]
 
-torrent.app_list = [{ command = "transmission-gtk" }]
+torrent.app_list = [{ command = "qBittorrent" }]
 
 [mimetype]
 
