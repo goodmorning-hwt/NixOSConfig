@@ -62,7 +62,7 @@ in
     gping
     neofetch
 		neo-cowsay
-    youtube-dl
+    yt-dlp
     bat
     curl
     fzf
