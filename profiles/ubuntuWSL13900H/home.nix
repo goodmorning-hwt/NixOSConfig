@@ -72,6 +72,7 @@
 		tdesktop
 		figlet
 		meld
+    diff-so-fancy
 		neovim
 		aria2
 		emacs29-pgtk
