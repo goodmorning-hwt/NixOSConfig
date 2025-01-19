@@ -62,6 +62,7 @@
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
 		ranger
+    yazi
     hello
 		wget
 		curl
@@ -87,6 +88,8 @@
 
     nixpkgs-fmt
 		ripgrep
+
+    ueberzugpp
 
 
     # # It is sometimes useful to fine-tune packages, for example, by applying

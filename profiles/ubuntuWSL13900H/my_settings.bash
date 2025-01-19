@@ -13,7 +13,7 @@ export PATH=/home/hwt-wsl-ubuntu/.local/bin:$PATH
 # <<lvim
 
 # >> hwt write for ros
-source ~/SynologyDrive/codeSpace/my_scripts/SOURCEME.sh
+# source ~/SynologyDrive/codeSpace/my_scripts/SOURCEME.sh
 # <<
 
 # >> hwt write for blurry firefox
@@ -29,14 +29,14 @@ macchina -t Hydrogen
 export EDITOR="vim"
 export VISUAL="vim"
 
-check_synology_drive(){
-    if ! pgrep "cloud-drive-ui" > /dev/null; then
-        echo "Starting Synoloy Drive..."
-        synology-drive > /dev/null 2>&1 &
-    else
-        :
+check_synology_drive() {
+  if ! pgrep "cloud-drive-ui" >/dev/null; then
+    echo "Starting Synoloy Drive..."
+    synology-drive >/dev/null 2>&1 &
+  else
+    :
 
-    fi
+  fi
 
 }
 
