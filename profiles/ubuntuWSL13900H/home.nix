@@ -1,8 +1,8 @@
-{ config, pkgs, callPackage ,... }:
+{ config, pkgs, callPackage, ... }:
 
 {
   imports = [
-	# Each time before you import, you should stage your file.
+    # Each time before you import, you should stage your file.
 
     ../../system/app/shell/sh.nix
     ../../system/app/editor/vim/vim.nix
@@ -31,16 +31,16 @@
     ../../system/app/development/direnv.nix
 
 
-  # Priority
-	/*
-	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
-	value : 100 priority
-	lib.mkOverride somevalue  specific priority
-  lib.mkForce
+    # Priority
+    /*
+      	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
+      	value : 100 priority
+      	lib.mkOverride somevalue  specific priority
+      lib.mkForce
 
-	same attribute set automatically merge
-	*/
-	];
+      	same attribute set automatically merge
+    	*/
+  ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "hwt-wsl-ubuntu";
@@ -61,33 +61,33 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-		ranger
+    ranger
     yazi
     hello
-		wget
-		curl
-		vim
-		unzip
-		zip
-		foliate
-		tdesktop
-		figlet
-		meld
+    wget
+    curl
+    vim
+    unzip
+    zip
+    foliate
+    tdesktop
+    figlet
+    meld
     diff-so-fancy
-		neovim
-		aria2
-		emacs29-pgtk
-		guile
+    neovim
+    aria2
+    emacs29-pgtk
+    guile
 
-		gitleaks
-		license_finder
+    gitleaks
+    license_finder
 
     latex2html
-		skopeo
-		wakatime
+    skopeo
+    wakatime
 
     nixpkgs-fmt
-		ripgrep
+    ripgrep
 
     ueberzugpp
 
