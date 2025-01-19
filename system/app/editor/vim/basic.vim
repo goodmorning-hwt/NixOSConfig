@@ -6,7 +6,7 @@ set formatoptions+=mM
 set guifontwide=Fixedsys:h12
 
 syntax on
-set tabstop=2
+set tabstop=4
 set autoindent
 
 set number
