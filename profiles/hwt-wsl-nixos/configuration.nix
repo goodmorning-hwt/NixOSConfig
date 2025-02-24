@@ -27,9 +27,11 @@
 
   system.stateVersion = "24.11"; # Did you read the comment?
 
+  programs.zsh.enable = true;
   users.users.hwt-wsl-nixos = {
     isNormalUser = true;
     description = "hwt-wsl-nixos";
+	shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
 	git
