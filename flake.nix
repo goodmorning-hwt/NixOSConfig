@@ -3,11 +3,7 @@
   description = "My First Flake";
 
   inputs = {
-    # nixpkgs = {
-    #  url = "github:NixOS/nixpkgs/nixos-23.11";
-    # };
-     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
@@ -26,26 +22,23 @@
         inherit system;
         modules = [ ./profiles/nixos/configuration.nix];
       };
+
+      "hwt-wsl-nixos" = lib.nixosSystem {
+        inherit system;
+        modules = [ ./profiles/hwt-wsl-nixos/configuration.nix];
+      };
     };
 
-    # homeConfigurations.nixos = {
-    #   "goodmorninghwt" = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     modules = [ ./profiles/nixos/home.nix];
-    #   };
-    # };
-
-    # homeConfigurations.rmbp2018EndeavourOS = {
-    #   "hwt" = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     modules = [ ./profiles/rmbp2018EndeavourOS/home.nix];
-    #   };
-    # };
 
     homeConfigurations = {
       "goodmorninghwt" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [ ./profiles/nixos/home.nix];
+      };
+
+      "hwt-wsl-nixos" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./profiles/hwt-wsl-nixos/home.nix];
       };
 
       "hwt" = home-manager.lib.homeManagerConfiguration {
