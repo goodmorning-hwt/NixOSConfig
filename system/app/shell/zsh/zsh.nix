@@ -14,18 +14,16 @@ let
 	 mkdir = "mkdir -p";
     ll = "ls -l";
     ".." = "cd ..";
-		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt";
+		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles#hwt-wsl-nixos --impure";
 		hms = "cd ~/.dotfiles && git add -A && home-manager switch --flake ~/.dotfiles";
 		switch = " nrs && hms";
 		doom = "~/.emacs.d/bin/doom";
-
     "q" = "exit";
     s = "neofetch";
     wttr="curl wttr.in";
     nv="unset http_proxy; unset https_proxy;"; # 终端设置不翻墙;
     ip="curl cip.cc"; # 查看ip和是否翻墙;
     # la="ls -a";
-    x="unar";
     ytd="youtube-dl";
     lg="lazygit";
     ra="joshuto";
@@ -114,8 +112,6 @@ in
 		initExtra = ''
 source ~/.dotfiles/profiles/my_alias.bash
 
-if [ -e /home/hwt/.nix-profile/etc/profile.d/nix.sh ]; then . /home/hwt/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 # 检查终端大小
 if [[ $(tput cols) -ge 80 && $(tput lines) -ge 24 ]]; then
     # neofetch
@@ -133,9 +129,7 @@ fif() {
   rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
 }
 
-export PATH="$HOME/.local/bin:$HOME/.local/share/JetBrains/Toolbox/scripts:$PATH"
 source $HOME/hwt.zshrc
-
 		'';
     zplug = {
       enable = true;

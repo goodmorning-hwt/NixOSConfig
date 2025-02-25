@@ -6,8 +6,6 @@ let
     ".." = "cd ..";
 		ra = "joshuto";
 		lg = "lazygit";
-		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt";
-		hms = "cd ~/.dotfiles && git add -A && home-manager switch --flake ~/.dotfiles";
 		update_spacemacs_dotfile = "cd ~/.dotfiles/system/app/editor/spacemacs && trash spacemacs.el.bk && mv ./spacemacs.el ./spacemacs.el.bk && cp ~/.spacemacs ~/.dotfiles/system/app/editor/spacemacs/spacemacs.el";
 		# switch = "update_spacemacs_dotfile && nrs && hms";
 		switch = " nrs && hms";

@@ -31,17 +31,15 @@
   users.users.hwt-wsl-nixos = {
     isNormalUser = true;
     description = "hwt-wsl-nixos";
-	shell = pkgs.zsh;
+    shell = pkgs.zsh;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-	git
-	curl
-	wget
-	vim
+      git
+      curl
+      wget
+      vim
 
     ];
   };
-  services.openssh = {
-    enable = true;
-  };
+  services.openssh = { enable = true; };
 }
