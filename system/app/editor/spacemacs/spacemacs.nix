@@ -21,9 +21,7 @@
     fasd
 
     # == nixos layer ==
-    nixfmt
-
-    # == python layer ==
+    nixfmt-rfc-style
 
   ];
 
