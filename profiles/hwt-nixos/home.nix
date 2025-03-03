@@ -25,6 +25,7 @@
     ../../system/app/lang/shell_scripts.nix
     ../../system/app/lang/latex.nix
 
+    ../../system/app/terminal/kitty/kitty.nix
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
 
@@ -82,7 +83,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    (pkgs.nerdfonts.override { fonts = [ "_0xproto" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
