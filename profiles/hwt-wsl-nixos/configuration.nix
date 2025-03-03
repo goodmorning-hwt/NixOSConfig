@@ -5,7 +5,12 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -15,7 +20,10 @@
 
   wsl.enable = true;
   wsl.defaultUser = "hwt-wsl-nixos";
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   environment.variables.EDITOR = "vim";
 
   # This value determines the NixOS release from which the default
@@ -32,7 +40,10 @@
     isNormalUser = true;
     description = "hwt-wsl-nixos";
     shell = pkgs.zsh;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       git
       curl
@@ -41,5 +52,7 @@
 
     ];
   };
-  services.openssh = { enable = true; };
+  services.openssh = {
+    enable = true;
+  };
 }

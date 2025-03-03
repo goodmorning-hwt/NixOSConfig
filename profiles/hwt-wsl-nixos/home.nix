@@ -1,30 +1,29 @@
-{ config, pkgs, callPackage, ... }:
+{
+  config,
+  pkgs,
+  callPackage,
+  ...
+}:
 
 {
   imports = [
     # Each time before you import, you should stage your file.
+
     ../../system/app/shell/sh.nix
     ../../system/app/editor/vim/vim.nix
-    # ../../system/app/editor/neovim/nvim.nix
     ../../system/app/editor/spacemacs/spacemacs.nix
 
     ../../system/app/geek/lazygit.nix
-    # ../../system/app/geek/toys.nix
-    # ../../system/app/geek/autojump.nix
     ../../system/app/geek/joshuto/joshuto.nix
 
     ../../system/app/others/PDFReader/zathura.nix
 
     ../../system/app/others/downloader/motrix/motrix.nix
 
-    # ../../system/app/Git/git.nix
-
-    # ../../system/app/inputMethod/ibus/ibus.nix
-    # ../../system/app/inputMethod/fcitx5/fcitx5.nix
-    # ../../system/app/inputMethod/rime/rime.nix
-
     ../../system/app/lang/python.nix
-    # ../../system/app/lang/go.nix
+    ../../system/app/lang/go.nix
+    ../../system/app/lang/shell_scripts.nix
+    ../../system/app/lang/latex.nix
 
     ../../system/app/shell/zsh/zsh.nix
     ../../system/app/shell/sh.nix
@@ -32,12 +31,13 @@
     ../../system/app/development/direnv.nix
 
     # Priority
-    /* lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
-       	value : 100 priority
-       	lib.mkOverride somevalue  specific priority
-       lib.mkForce
+    /*
+      lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
+      	value : 100 priority
+      	lib.mkOverride somevalue  specific priority
+      lib.mkForce
 
-       	same attribute set automatically merge
+      	same attribute set automatically merge
     */
   ];
   # Home Manager needs a bit of information about you and the paths it should
@@ -130,17 +130,18 @@
   # # Or
   # home.file.".config/hypr/hyprland.conf".source = some relative path
 
-  /* Some Notes:
-     sudo nixos-rebuild switch --flake .#goodmorninghwt
-     home-manager switch --flake . (~/.dotfiles)
+  /*
+    Some Notes:
+    sudo nixos-rebuild switch --flake .#goodmorninghwt
+    home-manager switch --flake . (~/.dotfiles)
 
-     Search Tips:
-     Personal Configs: home-manager(home.nix)
-     system level Configs: nixpkgs/option(configuration.nix)
+    Search Tips:
+    Personal Configs: home-manager(home.nix)
+    system level Configs: nixpkgs/option(configuration.nix)
 
-     How To Rollback:
-     home-manager generations
-     copy-the-listed-path/activate
+    How To Rollback:
+    home-manager generations
+    copy-the-listed-path/activate
   */
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
