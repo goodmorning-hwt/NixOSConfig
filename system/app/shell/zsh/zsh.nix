@@ -14,7 +14,7 @@ let
 	 mkdir = "mkdir -p";
     ll = "ls -l";
     ".." = "cd ..";
-		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles#hwt-wsl-nixos --impure";
+		nrs = "cd ~/.dotfiles && git add -A && sudo nixos-rebuild switch --flake ~/.dotfiles --impure";
 		hms = "cd ~/.dotfiles && git add -A && home-manager switch --flake ~/.dotfiles";
 		switch = " nrs && hms";
 		doom = "~/.emacs.d/bin/doom";
