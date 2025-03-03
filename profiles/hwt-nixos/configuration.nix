@@ -47,6 +47,15 @@
     LC_TIME = "zh_CN.UTF-8";
   };
 
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx.engines = with pkgs.fcitx-engines; [ rime ];
+    fcitx5.enableRimeData = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+    ];
+  };
+
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = true;
