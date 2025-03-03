@@ -2,13 +2,8 @@
 
 {
 
-  home.file.".config/fcitx5/rime" = {
-    source = ../rime/rime;
-    recursive = true;
-  };
-
-  home.file.".local/share/fcitx5/rime" = {
-    source = ../rime/rime;
+  home.file.".config/fcitx5" = {
+    source = ./fcitx5;
     recursive = true;
   };
 }
