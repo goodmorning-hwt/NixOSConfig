@@ -151,13 +151,12 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-  services.dae = {
-    enable = true;
+  # services.dae = {
+  #   enable = true;
 
-    openFirewall = {
-      enable = true;
-      port = 12345;
-    };
-
-  };
+  #   openFirewall = {
+  #     enable = true;
+  #     port = 12345;
+  #   };
+  # };
 }
