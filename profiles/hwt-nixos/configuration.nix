@@ -13,6 +13,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../system/font/font.nix
+    ../../system/app/inputMethod/fcitx5/fcitx5.nix
   ];
 
   # Bootloader.
@@ -45,17 +47,6 @@
     LC_PAPER = "zh_CN.UTF-8";
     LC_TELEPHONE = "zh_CN.UTF-8";
     LC_TIME = "zh_CN.UTF-8";
-  };
-
-  i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-mozc
-      fcitx5-gtk
-      fcitx5-nord
-      fcitx5-rime
-      rime-data
-    ];
   };
 
   # Enable the X11 windowing system.
@@ -94,6 +85,7 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  programs.zsh.enable = true;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.hwt-nixos = {
     isNormalUser = true;
@@ -106,6 +98,7 @@
       kdePackages.kate
       #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   services.openssh = {

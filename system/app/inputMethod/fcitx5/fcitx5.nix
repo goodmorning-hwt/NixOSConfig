@@ -1,22 +1,17 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-	fcitx5
-	fcitx5-gtk
-	fcitx5-rime
-	# catppuccin-fcitx5
-	];
 
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+      fcitx5-nord
+      fcitx5-rime
+      rime-data
+    ];
+  };
 
-
-	home.file.".config/fcitx5/rime" = {
-		source = ../rime/rime;
-		recursive = true;
-	};
-
-	home.file.".local/share/fcitx5/rime" = {
-		source = ../rime/rime;
-		recursive = true;
-	};
 }

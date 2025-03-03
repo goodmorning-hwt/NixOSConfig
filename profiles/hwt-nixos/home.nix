@@ -30,6 +30,9 @@
     ../../system/app/shell/sh.nix
 
     ../../system/app/development/direnv.nix
+    ../../system/app/inputMethod/fcitx5/rime_fcitx5.nix
+
+    ../../system/app/VPN/clash.nix
 
     # Priority
     /*
@@ -120,16 +123,8 @@
   #  /etc/profiles/per-user/goodmorninghwt/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
     EDITOR = "vim";
   };
-
-  # home.file.".config/hypr/hyprland.conf".text = ''
-  #   something nice;
-  # ''
-
-  # # Or
-  # home.file.".config/hypr/hyprland.conf".source = some relative path
 
   /*
     Some Notes:
