@@ -132,7 +132,7 @@
 
   /*
     Some Notes:
-    sudo nixos-rebuild switch --flake ~/.dotfiles#hwt-wsl-nixos --impure
+    sudo nixos-rebuild switch --flake ~/.dotfiles#hwt-nixos --impure
     home-manager switch --flake . (~/.dotfiles)
 
     Search Tips:

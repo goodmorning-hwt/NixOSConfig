@@ -54,12 +54,12 @@
           modules = [
             inputs.daeuniverse.nixosModules.dae
             inputs.daeuniverse.nixosModules.daed
-            ./profiles/hwt-wsl-nixos/configuration.nix
+            ./profiles/hwt-nixos/configuration.nix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.users.hwt-wsl-nixos = import ./profiles/hwt-nixos/home.nix;
+              home-manager.users.hwt-nixos = import ./profiles/hwt-nixos/home.nix;
 
               # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
               # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
@@ -80,6 +80,11 @@
         "hwt-wsl-nixos" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./profiles/hwt-wsl-nixos/home.nix ];
+        };
+
+        "hwt-nixos" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./profiles/hwt-nixos/home.nix ];
         };
 
         "hwt" = home-manager.lib.homeManagerConfiguration {
