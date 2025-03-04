@@ -64,6 +64,7 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+    # ==== toys ====
     ranger
     yazi
     hello
@@ -72,15 +73,19 @@
     vim
     unzip
     zip
-    foliate
-    tdesktop
     figlet
     meld
     diff-so-fancy
     neovim
+    # ==== Download
     aria2
-    guile
-    ripgrep
+    # ==== SNS ====
+    tdesktop
+    feishu
+    # discord
+    # ==== e-book reader ====
+    foliate
+    zathura
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
