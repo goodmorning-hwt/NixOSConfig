@@ -47,6 +47,7 @@ alias ca='conda activate'
 alias psg='ps aux | grep '
 alias pdf2ppm='pdftoppm'
 alias arch='ssh -p 52213 hwt@arch.imhwt.site'
+alias ni='ssh -p 52214 hwt@arch.imhwt.site'
 alias ubt='ssh -p 52212 hwt_ubuntu@ubt.imhwt.site'
 alias zrn_dom='ssh -p 48222 mr482@192.168.31.47'
 alias zrn_wsl='ssh -p 48222 mr482@$host_ip'
@@ -54,8 +55,8 @@ alias cm='cmake -S . -B build && cmake --build build'
 alias gctest='function _gctest() { git commit --allow-empty -m "test($1): joj"; }; _gctest'
 
 jojsubmit() {
-  git commit --allow-empty -m"joj. $@"
-  git push
+	git commit --allow-empty -m"joj. $@"
+	git push
 }
 alias joj-submit=jojsubmit
 alias js=jojsubmit
@@ -65,9 +66,9 @@ alias p2ssh='ssh 522370910172@111.186.59.59'
 alias p2sshk='kitty +kitten ssh 522370910172@111.186.59.59'
 
 c() {
-  "$@" | wl-copy
+	"$@" | wl-copy
 }
 
 e() {
-  "$@" >explorer.exe
+	"$@" >explorer.exe
 }

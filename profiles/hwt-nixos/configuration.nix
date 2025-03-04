@@ -110,8 +110,10 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "hwt-nixos";
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "hwt-nixos";
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
