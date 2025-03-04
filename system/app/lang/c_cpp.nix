@@ -1,9 +1,11 @@
 { config, pkgs, ... }:
+
 {
   home.packages = with pkgs; [
-    bash-language-server
-    shfmt
-
+    ccls
+    gdb
+    gdbgui
+    libclang
   ];
 
 }
