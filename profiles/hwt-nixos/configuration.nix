@@ -15,6 +15,7 @@
     ./hardware-configuration.nix
     ../../system/font/font.nix
     ../../system/app/inputMethod/fcitx5/fcitx5.nix
+    # ../../system/app/VPN/v2ray.nix
   ];
 
   # Bootloader.
@@ -123,16 +124,31 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    curl
-    git
-  ];
-  # ++ (with inputs.daeuniverse.packages.x86_64-linux; [
-  #   dae
-  #   daed
-  # ]);
+  environment.systemPackages =
+    with pkgs;
+    [
+      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+      wget
+      curl
+      git
+    ]
+    # ;
+    ++ (with inputs.daeuniverse.packages.x86_64-linux; [
+      dae
+      daed
+    ]);
+
+  networking.proxy.default = "http://127.0.0.1:7890";
+  networking.proxy.noProxy = "127.0.0.1,localhost";
+
+  # services.dae = {
+  #   enable = true;
+
+  #   openFirewall = {
+  #     enable = true;
+  #     port = 12345;
+  #   };
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -160,12 +176,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
-  # services.dae = {
-  #   enable = true;
-
-  #   openFirewall = {
-  #     enable = true;
-  #     port = 12345;
-  #   };
-  # };
 }

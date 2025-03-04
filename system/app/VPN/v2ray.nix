@@ -1,19 +1,19 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-	  v2ray
-		v2raya
-	  # qv2ray
-	];
 
-	# services.v2ray = {
+  environment.systemPackages = with pkgs; [
+    v2ray
+    v2raya
+    # qv2ray
+  ];
+
+  # services.v2ray = {
   #   enable = true;
-	# };
+  # };
 
-	# services.v2raya = {
-	# 	enable = true;
-	# };
-
+  services.v2raya = {
+    enable = true;
+  };
 
 }
