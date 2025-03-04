@@ -14,24 +14,22 @@ I'm sorry that I can't find a very nix way to install spacemacs. Thus, in this c
 - Editor: Emacs (spacemacs), VSCode
 - shell: zsh
 - terminal: Kitty
-- VPN Client: v2raya
+- VPN Client: clash-nyanpasu
 
 
 ## Get Started
 
-### Install On nixOS
+### NixOS
 
 1. Install nixOS
 
-2. Install home manager (Please refer to the Home Manager Manual. I prefer the Standalone installation way). Attention: if `nix-shell '<home-manager>' -A install` echos a `not found` error, you may reboot the system and reexecute the command.
+2. Clone the repository to `~/.dotfiles`
 
-3. clone the repository to `~/.dotfiles`
-
-4. run these shell command
+3. run these shell command
 ```shell
 cd ~/.dotfiles
 git add .
-sudo nixos-rebuild switch --flake ~/.dotfiles#goodmorninghwt
+sudo nixos-rebuild switch --flake ~/.dotfiles#username
 home-manager switch --flake ~/.dotfiles"
 ```
 
@@ -39,12 +37,12 @@ home-manager switch --flake ~/.dotfiles"
 
 6. Have fun!
 
-### Install on WSL
-1. Install Ubuntu
+### Home Manager
+1. Install your OS
 
 2. Install [Nix(Single-User Installatioin)](https://nixos.org/download)
 
-3. Edit `$HOME/.config/nix/nix.conf` (if the file does not exist, create it)
+3. Edit `/etc/nix/nix.conf` (if the file does not exist, create it)
 	```sh
 	sudo vim /etc/nix/nix.conf
 	```
@@ -56,26 +54,12 @@ add one line:
 experimental-fetures = nix-command flakes
 ```
 
-4. install asdf 
+4. install asdf
 I use asdf to manage my development environment
 use `asdf.sh` in my `myScript` Directory.
 
-5. install [rebos](https://gitlab.com/Oglo12/rebos/)
 
-```sh
-cargo install rebos
-rebos setup
-# if you have cloned my rebos config
-rebos gen current build
-```
-
-### Install on a desktop(Btw I use Arch)
-
-1. Do the same as you install this on WSL.
-
-2. You need to set your input method and VPN. I really want to find a *nix* way to install them but I failed. Just do not work.
-
-#### Install the Input method
+#### Install the Input method if you need
 
 Install `fcitx5` `fcitx-im` `fcitx` `fcitx5-rime` `fcitx5-configtool` `fcitx5-qt` `fcitx5-gtk` `fcitx5-chinese-addons` .
 
@@ -87,9 +71,9 @@ If you use v2raya, just refer to the official website.
 
 If you use Clash, `clash-nyanpasu` will be a good choice.
 
-## The problems I have met
+## QA
 
-### Input method not working
+### the Deploy of Rime is not responding
 
 because if nix locked the rime config directory, fcitx5-rime can not deploy the config. You need to make Rime config repository an individual repository, instead of managing them by nix.
 
