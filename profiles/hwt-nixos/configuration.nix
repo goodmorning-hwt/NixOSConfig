@@ -136,6 +136,16 @@
     wget
     curl
     git
+    # == hyprland
+    waybar
+    # eww
+    dunst
+    libnotify
+
+    hyprpaper
+    kitty
+    wofi
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -164,4 +174,20 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.11"; # Did you read the comment?
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
+
+  environment.sessionVariables = {
+    WLR_NO_HARDWARE_CURSORS = "1";
+    NIXOS_OZONE_WL = "1";
+  };
+
 }
