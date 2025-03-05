@@ -13,9 +13,15 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../system/font/font.nix
-    ../../system/app/inputMethod/fcitx5/fcitx5.nix
-    # ../../system/app/VPN/v2ray.nix
+    ../../system/configuration/font/font.nix
+    ../../system/configuration/inputMethod/fcitx5/fcitx5.nix
+    # ../../system/configuration/VPN/dae.nix
+    ../../system/configuration/VPN/clash.nix
+  ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
 
   # Bootloader.
@@ -55,8 +61,15 @@
   services.xserver.enable = true;
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
+
   services.desktopManager.plasma6.enable = true;
+
+  services.displayManager.sddm.enable = true;
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "hwt-nixos";
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -110,12 +123,6 @@
     openFirewall = true;
   };
 
-  # Enable automatic login for the user.
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "hwt-nixos";
-  };
-
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -124,31 +131,12 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages =
-    with pkgs;
-    [
-      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-      wget
-      curl
-      git
-    ]
-    # ;
-    ++ (with inputs.daeuniverse.packages.x86_64-linux; [
-      dae
-      daed
-    ]);
-
-  networking.proxy.default = "http://127.0.0.1:7890";
-  networking.proxy.noProxy = "127.0.0.1,localhost";
-
-  # services.dae = {
-  #   enable = true;
-
-  #   openFirewall = {
-  #     enable = true;
-  #     port = 12345;
-  #   };
-  # };
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    curl
+    git
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

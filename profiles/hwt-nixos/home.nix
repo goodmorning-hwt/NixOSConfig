@@ -30,9 +30,6 @@
     ../../system/app/shell/sh.nix
 
     ../../system/app/development/direnv.nix
-    ../../system/app/inputMethod/fcitx5/rime_fcitx5.nix
-
-    ../../system/app/VPN/clash.nix
 
     # Priority
     /*
