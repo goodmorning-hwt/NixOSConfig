@@ -5,9 +5,17 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.url = "github:nix-community/home-manager";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
+    hydenix = {
+      # Available inputs:
+      # Main: github:richen604/hydenix
+      # Dev: github:richen604/hydenix/dev
+      # Commit: github:richen604/hydenix/<commit-hash>
+      # Version: github:richen604/hydenix/v1.0.0
+      url = "github:richen604/hydenix";
+    };
   };
 
   outputs =
@@ -20,9 +28,23 @@
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      # pkgs = nixpkgs.legacyPackages.${system};
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+
+      hydenixConfig = inputs.hydenix.lib.mkConfig {
+        userConfig = import ./profiles/hwt-nixos/hyde-cfg.nix;
+        extraInputs = inputs;
+        # Pass user's pkgs to be used alongside hydenix's pkgs (eg. userPkgs.kitty)
+        extraPkgs = pkgs;
+      };
+
     in
     {
+
+      nixosConfigurations."hwt-nixos" = hydenixConfig.nixosConfiguration;
 
       nixosConfigurations = {
         "goodmorninghwt" = lib.nixosSystem {
@@ -49,26 +71,26 @@
           ];
         };
 
-        "hwt-nixos" = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            inputs.daeuniverse.nixosModules.dae
-            inputs.daeuniverse.nixosModules.daed
-            ./profiles/hwt-nixos/configuration.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.hwt-nixos = import ./profiles/hwt-nixos/home.nix;
+        # "hwt-nixos" = lib.nixosSystem {
+        #   inherit system;
+        #   specialArgs = { inherit inputs; };
+        #   modules = [
+        #     inputs.daeuniverse.nixosModules.dae
+        #     inputs.daeuniverse.nixosModules.daed
+        #     ./profiles/hwt-nixos/configuration.nix
+        #     home-manager.nixosModules.home-manager
+        #     {
+        #       home-manager.useGlobalPkgs = true;
+        #       home-manager.useUserPackages = true;
+        #       home-manager.users.hwt-nixos = import ./profiles/hwt-nixos/home.nix;
 
-              # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
-              # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
-              home-manager.extraSpecialArgs = inputs;
-            }
+        #       # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
+        #       # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
+        #       home-manager.extraSpecialArgs = inputs;
+        #     }
 
-          ];
-        };
+        #   ];
+        # };
 
       };
 

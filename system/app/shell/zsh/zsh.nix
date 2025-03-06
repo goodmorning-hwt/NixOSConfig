@@ -72,7 +72,7 @@ in
 		# Tools
     eza
     tree
-		trashy
+		# trashy
     unar
     joshuto
     lazygit

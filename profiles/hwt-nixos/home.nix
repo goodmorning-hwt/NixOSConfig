@@ -2,6 +2,7 @@
   config,
   pkgs,
   callPackage,
+  inputs,
   ...
 }:
 
@@ -20,7 +21,7 @@
 
     ../../system/app/others/downloader/motrix/motrix.nix
 
-    ../../system/app/lang/python.nix
+    # ../../system/app/lang/python.nix
     ../../system/app/lang/go.nix
     ../../system/app/lang/shell_scripts.nix
     ../../system/app/lang/latex.nix
@@ -45,7 +46,7 @@
   # manage.
   home.username = "hwt-nixos";
   home.homeDirectory = "/home/hwt-nixos";
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -73,7 +74,6 @@
     figlet
     meld
     diff-so-fancy
-    neovim
     # ==== Download
     aria2
     # ==== SNS ====
@@ -88,7 +88,7 @@
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -125,7 +125,7 @@
   #  /etc/profiles/per-user/goodmorninghwt/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    EDITOR = "vim";
+    # EDITOR = "vim";
   };
 
   /*

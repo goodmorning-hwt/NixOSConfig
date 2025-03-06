@@ -18,11 +18,7 @@
       mplus-outline-fonts.githubRelease
       dina-font
       proggyfonts
-      (nerdfonts.override {
-        fonts = [
-          "FiraCode"
-        ];
-      })
+      nerd-fonts._0xproto
     ];
 
     fontconfig = {

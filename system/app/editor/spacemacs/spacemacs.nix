@@ -1,13 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
-    (nerdfonts.override {
-      fonts = [
-        "DejaVuSansMono"
-      ];
-    })
+    # nerdfonts._0xproto
     ripgrep
     coreutils # basic GNU utilities
     fd
