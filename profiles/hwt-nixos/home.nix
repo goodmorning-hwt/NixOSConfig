@@ -26,9 +26,9 @@
     ../../system/app/lang/shell_scripts.nix
     ../../system/app/lang/latex.nix
 
-    ../../system/app/terminal/kitty/kitty.nix
-    ../../system/app/shell/zsh/zsh.nix
-    ../../system/app/shell/sh.nix
+    # ../../system/app/terminal/kitty/kitty.nix
+    # ../../system/app/shell/zsh/zsh.nix
+    # ../../system/app/shell/sh.nix
 
     ../../system/app/development/direnv.nix
 

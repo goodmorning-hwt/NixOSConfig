@@ -163,15 +163,16 @@
         "nix-index-database": "nix-index-database"
       },
       "locked": {
-        "lastModified": 1737853582,
-        "narHash": "sha256-igq5vGdXKmpmlf2rzgQ0XheeIb8oJmKL1VTSgmagtno=",
-        "owner": "richen604",
+        "lastModified": 1741319966,
+        "narHash": "sha256-yZNuIhIEgjlxTnxd+6t+sCSLZ29pSXrxMj0K826Aqx0=",
+        "owner": "goodmorning-hwt",
         "repo": "hydenix",
-        "rev": "acf1a1f4a9cd1f2f433503b3d317df0cf1fc8bc1",
+        "rev": "bfcbc97bd6cfca41823ba10bb1adb503e07f7698",
         "type": "github"
       },
       "original": {
-        "owner": "richen604",
+        "owner": "goodmorning-hwt",
+        "ref": "bfcbc97",
         "repo": "hydenix",
         "type": "github"
       }
