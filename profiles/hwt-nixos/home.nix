@@ -107,6 +107,11 @@
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
     # ".screenrc".source = dotfiles/screenrc;
+    ".config/hypr/userprefs.conf" = {
+      source = ./hyde-userprefs.conf;
+      force = true;
+      mutable = true;
+    };
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -129,7 +134,6 @@
   home.sessionVariables = {
     # EDITOR = "vim";
   };
-
 
   /*
     Some Notes:
