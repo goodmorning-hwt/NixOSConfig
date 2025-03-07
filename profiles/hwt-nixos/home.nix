@@ -27,8 +27,8 @@
     ../../system/app/lang/latex.nix
 
     # ../../system/app/terminal/kitty/kitty.nix
-    # ../../system/app/shell/zsh/zsh.nix
-    # ../../system/app/shell/sh.nix
+    ../../system/app/shell/zsh/zsh.nix
+    ../../system/app/shell/sh.nix
 
     ../../system/app/development/direnv.nix
 
@@ -130,13 +130,6 @@
     # EDITOR = "vim";
   };
 
-  home.file = {
-    ".config/hypr/userprefs.conf" = {
-      source = ./hypr-userprefs.conf;
-      force = true;
-      mutable = true;
-    };
-  };
 
   /*
     Some Notes:

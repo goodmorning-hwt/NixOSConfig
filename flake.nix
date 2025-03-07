@@ -14,7 +14,7 @@
       # Dev: github:richen604/hydenix/dev
       # Commit: github:richen604/hydenix/<commit-hash>
       # Version: github:richen604/hydenix/v1.0.0
-      url = "github:goodmorning-hwt/hydenix/bfcbc97";
+      url = "github:goodmorning-hwt/hydenix";
     };
   };
 
@@ -84,8 +84,6 @@
         #       home-manager.useUserPackages = true;
         #       home-manager.users.hwt-nixos = import ./profiles/hwt-nixos/home.nix;
 
-        #       # 使用 home-manager.extraSpecialArgs 自定义传递给 ./home.nix 的参数
-        #       # 取消注释下面这一行，就可以在 home.nix 中使用 flake 的所有 inputs 参数了
         #       home-manager.extraSpecialArgs = inputs;
         #     }
 
