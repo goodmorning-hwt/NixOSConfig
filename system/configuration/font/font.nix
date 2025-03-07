@@ -19,6 +19,11 @@
       dina-font
       proggyfonts
       nerd-fonts._0xproto
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.caskaydia-cove
+      nerd-fonts.caskaydia-mono
+      nerd-fonts.mononoki
     ];
 
     fontconfig = {
@@ -36,4 +41,8 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    # fontmatrix
+    fontconfig
+  ];
 }
