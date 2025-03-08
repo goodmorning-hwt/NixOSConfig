@@ -1,13 +1,12 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-		kitty
-	  fira-code-nerdfont
-	];
+  home.packages = with pkgs; [
+    kitty
+  ];
 
-	programs.kitty = {
-		enable = true;
+  programs.kitty = {
+    enable = true;
     font = {
       size = 15;
       name = "FiraCode Nerd Font";
@@ -15,7 +14,6 @@
     };
     theme = "Tokyo Night Moon";
 
-	};
-
+  };
 
 }
