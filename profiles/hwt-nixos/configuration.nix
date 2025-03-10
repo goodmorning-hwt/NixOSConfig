@@ -38,6 +38,9 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # I need this to save the wifi password
+  services.gnome.gnome-keyring.enable = true;
+
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -64,11 +67,13 @@
 
   # services.desktopManager.plasma6.enable = true;
 
-  services.displayManager.sddm.enable = true;
   # Enable automatic login for the user.
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "hwt-nixos";
+  services.displayManager = {
+    sddm.enable = true;
+    autoLogin = {
+      enable = true;
+      user = "hwt-nixos";
+    };
   };
 
   # Configure keymap in X11
@@ -81,7 +86,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -110,17 +115,9 @@
     ];
     packages = with pkgs; [
       kdePackages.kate
-      #  thunderbird
+      #
     ];
     shell = pkgs.zsh;
-  };
-
-  services.openssh = {
-    enable = true;
-    settings = {
-      X11Forwarding = true;
-    };
-    openFirewall = true;
   };
 
   # Install firefox.
@@ -136,7 +133,11 @@
     wget
     curl
     git
+    strongswan
   ];
+  services.strongswan = {
+    enable = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -149,7 +150,13 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      X11Forwarding = true;
+    };
+    openFirewall = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -166,5 +173,11 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   home-manager.backupFileExtension = "backup";
+
+  services.logind = {
+    lidSwitch = "suspend-then-hibernate";
+    lidSwitchDocked = "ignore";
+    lidSwitchExternalPower = "ignore";
+  };
 
 }

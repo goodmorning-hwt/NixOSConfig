@@ -30,7 +30,6 @@ let
     # la="ls -a";
     ytd = "youtube-dl";
     lg = "lazygit";
-    ra = "joshuto";
     jo = "joshuto";
     # cat="bat";
     # ll = "ls -l";
@@ -88,11 +87,19 @@ in
     sshfs
     z-lua
 
-    # font
-    fira-code-nerdfont
-
     # theme
     starship
+
+    # ==== toys ====
+    ranger
+    yazi
+    hello
+    unzip
+    zip
+    figlet
+    meld
+    diff-so-fancy
+
   ];
 
   programs.starship = {

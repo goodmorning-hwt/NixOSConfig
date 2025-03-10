@@ -62,21 +62,15 @@
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-    # ==== toys ====
-    ranger
-    yazi
     hello
-    wget
-    curl
-    vim
-    unzip
-    zip
-    figlet
-    meld
-    diff-so-fancy
-    # ==== Download
+    # ==== Music Client ====
+    cider
+
+    # ==== Download Client ====
     aria2
-    # ==== SNS ====
+    qbittorrent # with both GUI and webui
+    motrix
+    # ==== SNS client ====
     tdesktop
     feishu
     # discord
@@ -85,6 +79,8 @@
     zathura
     # ==== video player ====
     vlc
+    # ==== mail client ====
+    thunderbird
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -113,7 +109,7 @@
       mutable = true;
     };
 
-    ".config/kitty/.conf" = {
+    ".config/kitty/kitty.conf" = {
       source = ./hyde-kitty.conf;
       force = true;
       mutable = true;
