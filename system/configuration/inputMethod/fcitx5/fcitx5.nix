@@ -11,7 +11,7 @@
       fcitx5-gtk
       fcitx5-nord
       fcitx5-rime
-      fcitx5-material-color
+      # fcitx5-material-color
       fcitx5-configtool
       # libsForQt5.fcitx5-qt
       rime-data

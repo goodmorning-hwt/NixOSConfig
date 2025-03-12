@@ -65,7 +65,8 @@
     hello
     # ==== Music Client ====
     cider
-
+    # ==== Web Cam ====
+    cheese
     # ==== Download Client ====
     aria2
     qbittorrent # with both GUI and webui
@@ -80,7 +81,10 @@
     # ==== video player ====
     vlc
     # ==== mail client ====
-    thunderbird
+    claws-mail
+    # thunderbird
+    # ==== disk usage ====
+    baobab
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
