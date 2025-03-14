@@ -13,7 +13,6 @@ alias lg='lazygit'
 alias ll='ls -l'
 alias ls='eza -h --git --icons --color=auto --group-directories-first -s extension'
 alias lv='lvim'
-alias mkcd='function _mkcd() { mkdir "$1" && cd "$1" && echo -e "\033[1;32m$(pwd)\033[0m"; }; _mkcd'
 alias mkdir='mkdir -p'
 alias nv='unset ALL_PROXY;unset http_proxy; unset https_proxy;'
 alias o='open'
@@ -29,7 +28,6 @@ alias vc='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:2
 alias vs='export http_proxy=socks5://127.0.0.1:20170;export https_proxy=socks5://127.0.0.1:20170'
 alias wttr='curl wttr.in'
 alias ytd='youtube-dl'
-alias zip280='parent_folder=$(basename "$(pwd)"); zip -r "${parent_folder}.zip" *.cpp *.h Makefile'
 alias yf='ssh -p 22 yifei@192.168.1.127'
 alias yyf='ssh -p 22 yifei@192.168.1.127'
 alias ok='python3 ok --local -q'
@@ -50,25 +48,11 @@ alias arch='ssh -p 52213 hwt@arch.imhwt.site'
 alias ni='ssh -p 52214 hwt@arch.imhwt.site'
 alias ubt='ssh -p 52212 hwt_ubuntu@ubt.imhwt.site'
 alias zrn_dom='ssh -p 48222 mr482@192.168.31.47'
-alias zrn_wsl='ssh -p 48222 mr482@$host_ip'
 alias cm='cmake -S . -B build && cmake --build build'
-alias gctest='function _gctest() { git commit --allow-empty -m "test($1): joj"; }; _gctest'
 
-jojsubmit() {
-	git commit --allow-empty -m"joj. $@"
-	git push
-}
-alias joj-submit=jojsubmit
-alias js=jojsubmit
 alias gcmsg='git add . && git cz c'
 alias vg='valgrind --leak-check=full '
-alias p2ssh='ssh 522370910172@111.186.59.59'
-alias p2sshk='kitty +kitten ssh 522370910172@111.186.59.59'
-
-c() {
-	"$@" | wl-copy
-}
-
-e() {
-	"$@" >explorer.exe
-}
+# alias p2ssh='ssh 522370910172@111.186.59.59'
+# alias p2sshk='kitty +kitten ssh 522370910172@111.186.59.59'
+# alias zip280='parent_folder=$(basename "$(pwd)"); zip -r "${parent_folder}.zip" *.cpp *.h Makefile'
+# alias gctest='function _gctest() { git commit --allow-empty -m "test($1): joj"; }; _gctest'

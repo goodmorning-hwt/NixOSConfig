@@ -10,14 +10,16 @@
   imports = [
     # Each time before you import, you should stage your file.
 
+    # ../../system/app/terminal/kitty/kitty.nix
     ../../system/app/shell/sh.nix
+    ../../system/app/shell/zsh/zsh.nix
+    ../../system/app/development/direnv.nix
+
     ../../system/app/editor/vim/vim.nix
     ../../system/app/editor/spacemacs/spacemacs.nix
 
     ../../system/app/geek/lazygit.nix
-    ../../system/app/geek/joshuto/joshuto.nix
-
-    ../../system/app/others/PDFReader/zathura.nix
+    # ../../system/app/geek/joshuto/joshuto.nix
 
     ../../system/app/others/downloader/motrix/motrix.nix
 
@@ -25,12 +27,6 @@
     ../../system/app/lang/go.nix
     ../../system/app/lang/shell_scripts.nix
     ../../system/app/lang/latex.nix
-
-    # ../../system/app/terminal/kitty/kitty.nix
-    ../../system/app/shell/zsh/zsh.nix
-    ../../system/app/shell/sh.nix
-
-    ../../system/app/development/direnv.nix
 
     # Priority
     /*
@@ -80,6 +76,7 @@
     zathura
     # ==== video player ====
     vlc
+    mpv # for gifs
     # ==== mail client ====
     claws-mail
     # thunderbird
