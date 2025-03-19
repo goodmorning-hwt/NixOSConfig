@@ -1,12 +1,9 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
-	home.packages = with pkgs; [
-	];
+  home.packages = with pkgs; [
+  ];
 
+  home.file.".gitconfig".source = ./.gitconfig;
 
-	
-  home.file.".gitconfig".source = ./.gitconfig; 
-
-  
 }

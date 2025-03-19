@@ -23,7 +23,7 @@
 
     ../../system/app/others/downloader/motrix/motrix.nix
 
-    # ../../system/app/lang/python.nix
+    ../../system/app/lang/python.nix
     ../../system/app/lang/go.nix
     ../../system/app/lang/shell_scripts.nix
     ../../system/app/lang/latex.nix
