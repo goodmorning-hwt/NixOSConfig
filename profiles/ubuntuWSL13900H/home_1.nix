@@ -1,39 +1,45 @@
-{
-  config,
-  pkgs,
-  callPackage,
-  inputs,
-  ...
-}:
+{ config, pkgs, callPackage, ... }:
 
 {
   imports = [
     # Each time before you import, you should stage your file.
 
     ../../system/app/shell/sh.nix
-    ../../system/app/shell/zsh/zsh.nix
-    ../../system/app/development/direnv.nix
-
     ../../system/app/editor/vim/vim.nix
-    ../../system/app/editor/spacemacs/spacemacs.nix
 
     ../../system/app/geek/lazygit.nix
-    # ../../system/app/geek/joshuto/joshuto.nix
+    # ../../system/app/geek/toys.nix
+    # ../../system/app/geek/autojump.nix
+    ../../system/app/geek/joshuto/joshuto.nix
 
-    ../../system/app/lang/python.nix
-    ../../system/app/lang/go.nix
-    ../../system/app/lang/shell_scripts.nix
-    ../../system/app/lang/latex.nix
+    ../../system/app/others/PDFReader/zathura.nix
+
+    ../../system/app/others/downloader/motrix/motrix.nix
+
+    # ../../system/app/Git/git.nix
+
+    # ../../system/app/inputMethod/ibus/ibus.nix
+    # ../../system/app/inputMethod/fcitx5/fcitx5.nix
+    # ../../system/app/inputMethod/rime/rime.nix
+
+    # ../../system/app/lang/python.nix
+    # ../../system/app/lang/go.nix
+
+    ../../system/app/shell/zsh/zsh.nix
+    ../../system/app/shell/sh.nix
+
+    ../../system/app/development/direnv.nix
+
 
     # Priority
     /*
-      lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
+      	lib.mkDefault 50 priority This is the Default Value I want to use but if something is declared somewhere else, use that
       	value : 100 priority
       	lib.mkOverride somevalue  specific priority
       lib.mkForce
 
       	same attribute set automatically merge
-    */
+    	*/
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -48,18 +54,48 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.11"; # Please read the comment before changing.
+  home.stateVersion = "23.11"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
+    ranger
+    yazi
     hello
-    # ==== e-book reader ====
-    zathura
-    # ==== video player ====
-    mpv
+    wget
+    curl
+    vim
+    unzip
+    zip
+    foliate
+    tdesktop
+    figlet
+    meld
+    diff-so-fancy
+    neovim
+    aria2
+    emacs29-pgtk
+    guile
+
+    gitleaks
+    license_finder
+
+    latex2html
+    skopeo
+    wakatime
+
+    nixpkgs-fmt
+    ripgrep
+
+    ueberzugpp
+
+    bitwarden
+    bitwarden-cli
+    plandex
+    jq
+
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
@@ -101,12 +137,20 @@
   #  /etc/profiles/per-user/goodmorninghwt/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    # EDITOR = "emacs";
     EDITOR = "vim";
   };
 
-  /*
-    Some Notes:
-    sudo nixos-rebuild switch --flake ~/.dotfiles#hwt-nixos --impure
+
+  # home.file.".config/hypr/hyprland.conf".text = ''
+  #   something nice;
+  # ''
+
+  # # Or
+  # home.file.".config/hypr/hyprland.conf".source = some relative path
+
+  /* Some Notes:
+    sudo nixos-rebuild switch --flake .#goodmorninghwt
     home-manager switch --flake . (~/.dotfiles)
 
     Search Tips:
@@ -119,5 +163,6 @@
   */
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
 
 }
