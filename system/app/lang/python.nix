@@ -12,9 +12,9 @@
     python312Packages.pytest
     python312Packages.debugpy
     python312Packages.isort
-    # python312Packages.conda
-    # conda
-    # micromamba
+    python312Packages.tkinter
+    tk-9_0
+    micromamba
 
   ];
 
