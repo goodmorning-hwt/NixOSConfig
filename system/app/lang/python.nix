@@ -3,7 +3,7 @@
 {
   home.packages = with pkgs; [
 
-    python312
+    # python312
     python312Packages.pip
     python312Packages.virtualenv
     python312Packages.setuptools
@@ -12,6 +12,9 @@
     python312Packages.pytest
     python312Packages.debugpy
     python312Packages.isort
+    # python312Packages.conda
+    # conda
+    # micromamba
 
   ];
 
