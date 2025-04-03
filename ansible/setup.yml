@@ -1,0 +1,168 @@
+---
+- name: Setup system with SSH, Git, Nix, Home Manager, and other tools
+  hosts: localhost
+  become: yes  # 部分任务需要 root 权限（如安装包）
+  vars:
+    # 定义 Git 仓库和目标路径
+    git_repos:
+      - { repo: 'git@github.com:goodmorning-hwt/NixOSConfig.git', dest: '~/.dotfiles' }
+      - { repo: 'git@github.com:goodmorning-hwt/.spacemacs.d.git', dest: '~/.spacemacs.d' }
+      - { repo: 'https://github.com/syl20bnr/spacemacs', dest: '~/.emacs.d' }
+    # Fcitx5 相关包列表
+    fcitx5_packages:
+      - fcitx5-mozc
+      - fcitx5-chinese-addons
+      - fcitx5-gtk
+      - fcitx5-nord
+      - fcitx5-rime
+      - fcitx5-configtool
+      - rime-data
+
+  tasks:
+    # 1. 生成 SSH 密钥
+    - name: Generate SSH key
+      openssh_keypair:
+        path: ~/.ssh/id_ed25519
+        type: ed25519
+        state: present
+
+    # 2. 设置 Git 配置
+    - name: Set Git user name
+      git_config:
+        name: user.name
+        value: "Wentao He"
+        scope: global
+
+    - name: Set Git user email
+      git_config:
+        name: user.email
+        value: "goodmorning_hwt@sjtu.edu.cn"
+        scope: global
+
+    # 3. 安装 NixOS 包管理器（单用户模式）
+    - name: Install Nix (single-user)
+      shell: sh <(curl -L https://nixos.org/nix/install) --no-daemon
+      args:
+        creates: /nix/store
+      become: no  # 单用户安装无需 root
+
+    - name: Source Nix profile
+      shell: . ~/.nix-profile/etc/profile.d/nix.sh
+      args:
+        executable: /bin/bash
+      become: no
+
+    # 4. 启用 nix-command 和 flakes
+    - name: Ensure nix.conf exists
+      file:
+        path: ~/.config/nix/nix.conf
+        state: touch
+        mode: '0644'
+      become: no
+
+    - name: Enable nix-command and flakes
+      lineinfile:
+        path: ~/.config/nix/nix.conf
+        line: 'experimental-features = nix-command flakes'
+        create: yes
+      become: no
+
+    # 5. 安装 Home Manager
+    - name: Add Home Manager channel and install
+      shell: nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager && nix-channel --update && nix-shell '<home-manager>' -A install
+      args:
+        creates: ~/.nix-profile/bin/home-manager
+      become: no
+
+    # 6. 安装 clash-nyanpasu
+    - name: Install clash-nyanpasu (Ubuntu)
+      apt:
+        deb: "https://github.com/libnyanpasu/clash-nyanpasu/releases/latest/download/clash-nyanpasu.deb"
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install clash-nyanpasu (Arch)
+      aur:
+        name: clash-nyanpasu-bin
+        state: present
+      when: ansible_os_family == "Archlinux"
+      become: yes
+
+    # 7. 安装 Mamba
+    - name: Install Mamba via Miniforge
+      shell: wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O /tmp/Miniforge3.sh && bash /tmp/Miniforge3.sh -b -p ~/mambaforge && rm /tmp/Miniforge3.sh
+      args:
+        creates: ~/mambaforge
+      become: no
+
+    # 8. 克隆 Git 仓库
+    - name: Clone Git repositories
+      git:
+        repo: "{{ item.repo }}"
+        dest: "{{ item.dest }}"
+        accept_hostkey: yes
+      loop: "{{ git_repos }}"
+      become: no
+
+    - name: Move NixOSConfig into .dotfiles
+      command: mv ~/.dotfiles/NixOSConfig/* ~/.dotfiles/
+      args:
+        creates: ~/.dotfiles/flake.nix  # 假设 NixOSConfig 中有 flake.nix
+      become: no
+
+    # 9. 安装 Fcitx5 相关包
+    - name: Install Fcitx5 packages (Ubuntu)
+      apt:
+        name: "{{ fcitx5_packages }}"
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Fcitx5 Qt (Ubuntu)
+      apt:
+        name: fcitx5-qt
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Fcitx5 packages (Arch)
+      pacman:
+        name: "{{ fcitx5_packages }}"
+        state: present
+      when: ansible_os_family == "Archlinux"
+
+    - name: Install Fcitx5 Qt (Arch)
+      pacman:
+        name: fcitx5-qt5
+        state: present
+      when: ansible_os_family == "Archlinux"
+
+    # 10. 克隆雾凇拼音 (rime-ice) 到 Fcitx5 Rime 配置目录
+    - name: Clone rime-ice to Fcitx5 Rime directory
+      git:
+        repo: https://github.com/iDvel/rime-ice
+        dest: ~/.local/share/fcitx5/rime
+        accept_hostkey: yes
+      become: no
+
+    # 安装 Vim
+    - name: Install Vim (Ubuntu)
+      apt:
+        name: vim
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Install Vim (Arch)
+      pacman:
+        name: vim
+        state: present
+      when: ansible_os_family == "Archlinux"
+
+    # 设置默认文本编辑器为 Vim
+    - name: Set Vim as default editor
+      shell: update-alternatives --set editor /usr/bin/vim.basic
+      when: ansible_os_family == "Debian"
+
+    - name: Set Vim as default editor (Arch)
+      shell: echo 'export EDITOR=/usr/bin/vim' >> ~/.bashrc
+      args:
+        creates: ~/.bashrc
+      when: ansible_os_family == "Archlinux"
