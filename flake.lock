@@ -43,11 +43,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1740074809,
-        "narHash": "sha256-81CDZ0y1J1OgIblNl3HdLyuB8oxi3vN5AwP9a5t/ZGo=",
+        "lastModified": 1741008028,
+        "narHash": "sha256-Dypah+fVZ30hCRG96hu1Vmi0DHQSv6XKfy8S6kiS2CQ=",
         "owner": "daeuniverse",
         "repo": "flake.nix",
-        "rev": "c186ea01695ba98dab1b397e7a02833b9f12789e",
+        "rev": "2d2ea1661c89efc9c12781572b95f4bb700f2a4a",
         "type": "github"
       },
       "original": {
@@ -120,16 +120,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1739757849,
-        "narHash": "sha256-Gs076ot1YuAAsYVcyidLKUMIc4ooOaRGO0PqTY7sBzA=",
+        "lastModified": 1744038920,
+        "narHash": "sha256-9a4V1wQXS8hXZtc7mRtz0qINkGW+C99aDrmXY6oYBFg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9d3d080aec2a35e05a15cedd281c2384767c2cfe",
+        "rev": "a4d8020820a85b47f842eae76ad083b0ec2a886a",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
-        "ref": "release-24.11",
+        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
@@ -163,11 +163,11 @@
         "nix-index-database": "nix-index-database"
       },
       "locked": {
-        "lastModified": 1741323856,
-        "narHash": "sha256-/Qnamibsk70Yj92814oUipTkP/yOsw0QC+FNzyJq1Hs=",
+        "lastModified": 1741326327,
+        "narHash": "sha256-zlQtVYectsKffpLLG9J/FQN9Az8lysCcdcF1Vkl42sg=",
         "owner": "goodmorning-hwt",
         "repo": "hydenix",
-        "rev": "58841efc764a72dfc25066fb1ce2032b60dbc3fc",
+        "rev": "20344e39418bf63e94d0670c0f445a86e5c09feb",
         "type": "github"
       },
       "original": {
@@ -582,16 +582,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1740162160,
-        "narHash": "sha256-SSYxFhqCOb3aiPb6MmN68yEzBIltfom8IgRz7phHscM=",
+        "lastModified": 1743964447,
+        "narHash": "sha256-nEo1t3Q0F+0jQ36HJfbJtiRU4OI+/0jX/iITURKe3EE=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "11415c7ae8539d6292f2928317ee7a8410b28bb9",
+        "rev": "063dece00c5a77e4a0ea24e5e5a5bd75232806f8",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-24.11",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }

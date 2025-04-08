@@ -99,6 +99,8 @@ in
     figlet
     meld
     diff-so-fancy
+    pokemonsay
+    fortune
 
   ];
 

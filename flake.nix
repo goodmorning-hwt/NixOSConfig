@@ -3,9 +3,9 @@
   description = "My First Flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     # home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
     hydenix = {
@@ -121,6 +121,11 @@
         "hwt-wsl-ubt" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./profiles/ubuntuWSL13900H/home.nix ];
+        };
+
+        "hwt-sv7-edv" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./profiles/hwt-sv7-edv/home.nix ];
         };
 
       };
