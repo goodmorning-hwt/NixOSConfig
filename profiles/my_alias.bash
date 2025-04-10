@@ -52,6 +52,7 @@ alias cm='cmake -S . -B build && cmake --build build'
 
 alias gcmsg='git add . && git cz c'
 alias vg='valgrind --leak-check=full '
+alias uvs='source .venv/bin/activate'
 # alias p2ssh='ssh 522370910172@111.186.59.59'
 # alias p2sshk='kitty +kitten ssh 522370910172@111.186.59.59'
 # alias zip280='parent_folder=$(basename "$(pwd)"); zip -r "${parent_folder}.zip" *.cpp *.h Makefile'
