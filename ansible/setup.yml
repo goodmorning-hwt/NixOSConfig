@@ -53,6 +53,13 @@
       become: no
 
     # 4. 启用 nix-command 和 flakes
+    - name: Create ~/.config/nix directory
+      file:
+        path: ~/.config/nix
+        state: directory
+        mode: '0755'
+      become: no
+
     - name: Ensure nix.conf exists
       file:
         path: ~/.config/nix/nix.conf
@@ -74,25 +81,36 @@
         creates: ~/.nix-profile/bin/home-manager
       become: no
 
-    # 6. 安装 clash-nyanpasu
-    - name: Install clash-nyanpasu (Ubuntu)
-      apt:
-        deb: "https://github.com/libnyanpasu/clash-nyanpasu/releases/latest/download/clash-nyanpasu.deb"
-        state: present
-      when: ansible_os_family == "Debian"
-
-    - name: Install clash-nyanpasu (Arch)
-      aur:
-        name: clash-nyanpasu-bin
+    # 6. 将 archlinuxcn 加入 pacman 软件仓库并安装 dae 和 daed
+    - name: Add archlinuxcn repository to pacman.conf
+      blockinfile:
+        path: /etc/pacman.conf
+        block: |
+          [archlinuxcn]
+          Server = https://repo.archlinuxcn.org/$arch
         state: present
       when: ansible_os_family == "Archlinux"
-      become: yes
 
-    # 7. 安装 Mamba
-    - name: Install Mamba via Miniforge
-      shell: wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O /tmp/Miniforge3.sh && bash /tmp/Miniforge3.sh -b -p ~/mambaforge && rm /tmp/Miniforge3.sh
+    - name: Import archlinuxcn GPG key
+      shell: pacman-key --recv-keys 73C2ACF0A4F39C78 && pacman-key --lsign-key 73C2ACF0A4F39C78
       args:
-        creates: ~/mambaforge
+        creates: /etc/pacman.d/gnupg
+      when: ansible_os_family == "Archlinux"
+
+    - name: Install dae and daed via pacman
+      pacman:
+        name:
+          - dae
+          - daed
+        state: present
+        update_cache: yes
+      when: ansible_os_family == "Archlinux"
+
+    # 7. 安装 uv
+    - name: Install uv
+      shell: curl -LsSf https://astral.sh/uv/install.sh | sh
+      args:
+        creates: ~/.cargo/bin/uv
       become: no
 
     # 8. 克隆 Git 仓库
