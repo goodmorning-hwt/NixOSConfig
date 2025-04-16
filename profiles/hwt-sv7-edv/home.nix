@@ -67,7 +67,7 @@
 
     hello
     # ==== Music Client ====
-    cider
+    # cider
     # ==== Web Cam ====
     cheese
     # ==== Download Client ====
